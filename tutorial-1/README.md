@@ -195,6 +195,10 @@ After using lambda expression:
 
 ### Difference between implementing Observer pattern by creating your own Subject and Observer from scratch vs. built in
 - Scratch
-	- 
+  - We must create Observer and Subject interface from scratch.
+  - We must create registerObserver(), removeObserver(), and notifyObserver() method to the subject Interface.
+  - To notify all observer, the subject must implement notifyObserver().
 - Java Observable and Observer
-	- 
+  - We only implement Java's Observable and Observer interface to the class who need that interface.
+  - The subject will notify all observer when data changed. To notify all observer we must call setChanged() and notifyObservers() method.
+  - The observer only implements override method like update() method. That method will be called when the subject call notifyObservers() method.
