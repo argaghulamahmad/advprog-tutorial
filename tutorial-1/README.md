@@ -150,7 +150,51 @@ and `java.util.Observer`
     - Write your answer in [My Notes](#my-notes) section in this document
 
 ## My Notes
+### Another example of Strategy Pattern: Using lambda expressions
+In Java 8, we can use lambda expression for alternative strategy pattern.
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+Before using lambda expression:
+
+    public class StartegyPatternOldWay {
+    
+      public static void main(String[] args) {
+    
+        List<Strategy> strategies = 
+            Arrays.asList(
+              new LazyStratgey(), 
+              new ActiveStratgey()
+            );
+    
+        for(Strategy stg : strategies){
+          stg.performTask();
+        }
+      }
+    }
+
+After using lambda expression:
+
+    import java.util.Arrays;
+    import java.util.List;
+    
+    public class StrategyPatternOnSteroids {
+      public static void main(String[] args) {
+          
+        System.out.println("Strategy pattern on Steroids");
+        
+        List<Strategy> strategies = 
+          Arrays.asList(
+            () -> {System.out.println("Perform task a day before deadline!");},
+            () -> {System.out.println("Perform task now!");}
+          );
+        
+        strategies.forEach((elem) -> elem.performTask());
+      }
+      
+    }
+	
+
+### Difference between implementing Observer pattern by creating your own Subject and Observer from scratch vs. built in
+- Scratch
+	- 
+- Java Observable and Observer
+	- 
