@@ -1,7 +1,7 @@
 package id.ac.ui.cs.advprog.tutorial1.strategy;
 
 /**
- * Perilaku terbang
+ * Perilaku terbang.
  */
 public interface FlyBehavior {
     /**

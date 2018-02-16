@@ -31,8 +31,12 @@ public class StatisticsDisplay implements Observer, DisplayElement {
             tempSum += temp;
             numReadings++;
 
-            if (temp > maxTemp) maxTemp = temp;
-            if (temp < minTemp) minTemp = temp;
+            if (temp > maxTemp) {
+                maxTemp = temp;
+            }
+            if (temp < minTemp) {
+                minTemp = temp;
+            }
 
             display();
         }

@@ -1,11 +1,11 @@
 package id.ac.ui.cs.advprog.tutorial1.strategy;
 
 /**
- * Perilaku Quack
+ * Perilaku Quack.
  */
 public interface QuackBehavior {
     /**
-     * Method quack
+     * Method quack.
      */
     void quack();
 }
