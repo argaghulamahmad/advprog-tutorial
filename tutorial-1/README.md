@@ -133,18 +133,18 @@ gradle checkstyleMain
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, i.e. Checkstyle did not
+- [x] Make sure there are no code style issues, i.e. Checkstyle did not
 produce any warning when you execute `check` or `checkstyleMain` Gradle
 tasks
-- [ ] Implement all required methods correctly
+- [x] Implement all required methods correctly
     - **Hint: Make sure the implementation follows the example in Head First
     Design Pattern book!**
-- [ ] Describe another example of Strategy pattern you found in the wild, e.g.
+- [x] Describe another example of Strategy pattern you found in the wild, e.g.
 Java's standard library, 3rd party framework, etc., and write it in the
 provided space in this document (i.e. [My Notes](#my-notes) section)
     - **Reminder: Do not forget to `add`, `commit`, and `push` this document
     as well if you made some changes!**
-- [ ] Describe the difference between implementing Observer pattern by creating
+- [x] Describe the difference between implementing Observer pattern by creating
 your own Subject and Observer from scratch vs. reusing Java's `java.util.Observable`
 and `java.util.Observer`
     - Write your answer in [My Notes](#my-notes) section in this document
