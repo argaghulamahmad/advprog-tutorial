@@ -1,7 +1,7 @@
 package id.ac.ui.cs.advprog.tutorial1.strategy;
 
 /**
- * Abstract class Duck yang merepresntasikan
+ * Abstract class Duck yang merepresentasikan Bebek
  */
 public abstract class Duck {
     /**
