@@ -3,6 +3,9 @@ package id.ac.ui.cs.advprog.tutorial1.observer;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * ForecastDisplay adalah salah satu observer yang menampilkan informasi prediksi cuaca.
+ */
 public class ForecastDisplay implements Observer, DisplayElement {
 
     private float currentPressure = 29.92f;

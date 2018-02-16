@@ -3,6 +3,10 @@ package id.ac.ui.cs.advprog.tutorial1.observer;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * CurrentConditionsDisplay merupakan Observer yang mengimplementasikan interface DisplayElement.
+ * Class ini berguna untuk menampilkan dan memperbaharui data cuaca.
+ */
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
     private Observable observable;

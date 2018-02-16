@@ -2,6 +2,9 @@ package id.ac.ui.cs.advprog.tutorial1.observer;
 
 import java.util.Observable;
 
+/**
+ * WeatherData merupakan data yang merepresentasikan data cuaca.
+ */
 public class WeatherData extends Observable {
 
     private float temperature;

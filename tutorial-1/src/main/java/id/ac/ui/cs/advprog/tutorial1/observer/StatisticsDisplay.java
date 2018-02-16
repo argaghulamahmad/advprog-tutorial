@@ -3,6 +3,9 @@ package id.ac.ui.cs.advprog.tutorial1.observer;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * StatisticsDisplay adalah salah satu observer yang menampilkan informasi statistik cuaca.
+ */
 public class StatisticsDisplay implements Observer, DisplayElement {
 
     private float maxTemp = 0.0f;
