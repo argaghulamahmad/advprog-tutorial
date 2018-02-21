@@ -13,9 +13,7 @@ public class MacroCommand implements Command {
 
     @Override
     public void execute() {
-        for (Command command : commands) {
-            command.execute();
-        }
+        commands.forEach(Command::execute);
     }
 
     @Override
