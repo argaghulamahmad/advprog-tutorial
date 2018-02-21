@@ -42,7 +42,6 @@ class RemoteControlWithUndoTest {
     @Test
     @DisplayName("tells device to undo previous operation when undo button was pressed")
     void testPressUndoButton() {
-        remote.onButtonWasPushed(DEFAULT_BUTTON);
         remote.undoButtonWasPushed();
 
         verify(command).undo();
