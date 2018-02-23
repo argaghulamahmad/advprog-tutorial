@@ -194,24 +194,24 @@ classes in `command` package
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, i.e. Checkstyle did not
+- [x] Make sure there are no code style issues, i.e. Checkstyle did not
 produce any warning when you execute `check` or `checkstyleMain` Gradle
 tasks
-- [ ] Implement `CeilingFanCommand` and its subclasses correctly
-- [ ] Pass all tests for classes in `command` package
-- [ ] Compare the template method version of `CeilingFanCommand` with the
+- [x] Implement `CeilingFanCommand` and its subclasses correctly
+- [x] Pass all tests for classes in `command` package
+- [x] Compare the template method version of `CeilingFanCommand` with the
 old design used by code examples in Head First Design Patterns chapter 6
 and describe the differences
     - Write your answer in [My Notes](#my-notes) section in this document
-- [ ] Implement `execute()` method in `MacroCommand` class using Stream API
-- [ ] All tests for `MacroCommand` still pass after `execute()` method was
+- [x] Implement `execute()` method in `MacroCommand` class using Stream API
+- [x] All tests for `MacroCommand` still pass after `execute()` method was
 modified to use Stream API
 
 ## My Notes
 ### Differences between 'CeilingFanCommand' with the old design used by code examples in Head First Design Patterns chapter 6
 - CeilingFanCommand design
-    - Dalam design ini, kita menggunakan Template of Method design pattern pada Concrete Command 'Ceiling Fan'. Ini terlihat dari abstract class CeilingFanCommand, dimana pada abstract class tersebut kita mendefinisikan sebuah algoritma/steps pada method execute() dan asbtract class tersebut juga mengimplement interface Command. Dimana subclass CeilingFanCommand mendefinisikan kembali salah satu method/step pada method execute() abstract class yaitu method operate(). Method operate() akan didefinisikan kembali oleh subclasses sesuai tujuan subclasses tersebut, ini terlihat pada concerete class CeilingFanHighCommand, CeilingFanLowCommand, dan lain lain.
+    - Dalam design ini, kita menggunakan `Template of Method` design pattern pada Concrete Command `Ceiling Fan`. Ini terlihat dari abstract class `CeilingFanCommand`, dimana pada abstract class tersebut kita mendefinisikan sebuah algoritma/steps pada method execute() dan asbtract class tersebut juga mengimplement interface `Command`. Dimana subclass `CeilingFanCommand` mendefinisikan kembali salah satu method/step pada method `execute()` abstract class yaitu method `operate()`. Method `operate()` akan didefinisikan kembali oleh subclasses sesuai tujuan subclasses tersebut, ini terlihat pada concerete class `CeilingFanHighCommand`, `CeilingFanLowCommand`, dan lain lain.
 - Old design from the HFDP book
-    - Dalam design ini, penulis buku mengimplementasikan CeilingFan design dengan mengimplementasikan interface Command pada setiap Concrete Class. Concrete class juga langsung mendefinisikan override method yang diwariskan interface Command.
+    - Dalam design ini, penulis buku mengimplementasikan `CeilingFan` dengan mengimplement interface `Command` pada setiap Concrete Class. Concrete class juga langsung mendefinisikan override method yang diwariskan interface `Command`.
 
 
