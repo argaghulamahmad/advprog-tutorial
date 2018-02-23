@@ -208,7 +208,10 @@ and describe the differences
 modified to use Stream API
 
 ## My Notes
+### Differences between 'CeilingFanCommand' with the old design used by code examples in Head First Design Patterns chapter 6
+- CeilingFanCommand design
+    - Dalam design ini, kita menggunakan Template of Method design pattern pada Concrete Command 'Ceiling Fan'. Ini terlihat dari abstract class CeilingFanCommand, dimana pada abstract class tersebut kita mendefinisikan sebuah algoritma/steps pada method execute() dan asbtract class tersebut juga mengimplement interface Command. Dimana subclass CeilingFanCommand mendefinisikan kembali salah satu method/step pada method execute() abstract class yaitu method operate(). Method operate() akan didefinisikan kembali oleh subclasses sesuai tujuan subclasses tersebut, ini terlihat pada concerete class CeilingFanHighCommand, CeilingFanLowCommand, dan lain lain.
+- Old design from the HFDP book
+    - Dalam design ini, penulis buku mengimplementasikan CeilingFan design dengan mengimplementasikan interface Command pada setiap Concrete Class. Concrete class juga langsung mendefinisikan override method yang diwariskan interface Command.
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+
