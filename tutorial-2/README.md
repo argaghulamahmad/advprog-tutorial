@@ -181,16 +181,16 @@ gradle :tutorial-2:checkstyleMain
 
 ## Mandatory Tasks Checklist
 
-- [ ] Make at least 1 commit that contains your progress in completing
+- [x] Make at least 1 commit that contains your progress in completing
 Command pattern
-- [ ] Make at least 1 commit that contains your progress in completing
+- [x] Make at least 1 commit that contains your progress in completing
 Template Method pattern
-- [ ] Push your commits to online Git repository on your GitLab project
-- [ ] Complete all classes in `receiver` and `invoker` packages
-- [ ] Complete `LightOffCommand`, `LightOnCommand`, and `MacroCommand`
+- [x] Push your commits to online Git repository on your GitLab project
+- [x] Complete all classes in `receiver` and `invoker` packages
+- [x] Complete `LightOffCommand`, `LightOnCommand`, and `MacroCommand`
 classes in `command` package
-- [ ] Pass all tests for classes in `receiver` and `invoker` packages
-- [ ] Pass all tests for `CaffeineBeverage` class
+- [x] Pass all tests for classes in `receiver` and `invoker` packages
+- [x] Pass all tests for `CaffeineBeverage` class
 
 ## Additional Tasks Checklist
 
