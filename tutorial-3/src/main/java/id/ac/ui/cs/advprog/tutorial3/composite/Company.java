@@ -21,7 +21,7 @@ public class Company {
 
     public double getNetSalaries() {
         double netSalaries = 0;
-        for (Employees employees: employeesList) {
+        for (Employees employees : employeesList) {
             netSalaries += employees.getSalary();
         }
         return netSalaries;

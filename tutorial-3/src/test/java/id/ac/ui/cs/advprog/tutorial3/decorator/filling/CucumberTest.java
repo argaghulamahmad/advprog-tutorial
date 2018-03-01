@@ -1,10 +1,10 @@
 package id.ac.ui.cs.advprog.tutorial3.decorator.filling;
 
-import static org.junit.Assert.assertEquals;
-
 import id.ac.ui.cs.advprog.tutorial3.decorator.bread.CrustySandwich;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class CucumberTest {
     private Cucumber crustyCucumberSanwich;
