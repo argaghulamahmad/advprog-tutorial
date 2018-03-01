@@ -6,7 +6,9 @@ import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
 public class BackendProgrammer extends Employees {
     public BackendProgrammer(String name, double salary) {
         this.name = name;
+        if (salary < 20000) throw new IllegalArgumentException("Invalid salary " + salary);
         this.salary = salary;
+        this.role = "Back End Programmer";
     }
 
     @Override
