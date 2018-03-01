@@ -11,11 +11,11 @@ public class ChiliSauce extends Food {
 
     @Override
     public String getDescription() {
-        return "Thick Bun Burger, adding chili sauce";
+        return this.food.getDescription() + ", adding chili sauce";
     }
 
     @Override
     public double cost() {
-        return 2.80;
+        return 0.3 + this.food.cost();
     }
 }

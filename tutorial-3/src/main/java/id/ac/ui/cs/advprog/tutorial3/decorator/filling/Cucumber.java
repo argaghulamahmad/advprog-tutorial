@@ -11,11 +11,11 @@ public class Cucumber extends Food {
 
     @Override
     public String getDescription() {
-        return "Crusty Sandwich, adding cucumber";
+        return this.food.getDescription() + ", adding cucumber";
     }
 
     @Override
     public double cost() {
-        return 1.40;
+        return 0.40 + this.food.cost();
     }
 }

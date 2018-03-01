@@ -11,11 +11,11 @@ public class Tomato extends Food {
 
     @Override
     public String getDescription() {
-        return "Thick Bun Burger, adding tomato";
+        return this.food.getDescription() + ", adding tomato";
     }
 
     @Override
     public double cost() {
-        return 3.00;
+        return 0.5 + this.food.cost();
     }
 }

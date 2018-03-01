@@ -11,11 +11,11 @@ public class Lettuce extends Food {
 
     @Override
     public String getDescription() {
-        return "No Crust Sandwich, adding lettuce";
+        return this.food.getDescription() + ", adding lettuce";
     }
 
     @Override
     public double cost() {
-        return 2.75;
+        return 0.75 + this.food.cost();
     }
 }

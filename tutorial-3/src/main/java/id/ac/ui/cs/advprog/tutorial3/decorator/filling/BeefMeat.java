@@ -11,11 +11,11 @@ public class BeefMeat extends Food {
 
     @Override
     public String getDescription() {
-        return "Crusty Sandwich, adding beef meat";
+        return this.food.getDescription() + ", adding beef meat";
     }
 
     @Override
     public double cost() {
-        return 7.00;
+        return 6.00 + this.food.cost();
     }
 }

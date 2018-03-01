@@ -11,11 +11,11 @@ public class Cheese extends Food {
 
     @Override
     public String getDescription() {
-        return "No Crust Sandwich, adding cheese";
+        return this.food.getDescription() + ", adding cheese";
     }
 
     @Override
     public double cost() {
-        return 4.00;
+        return 2.00 + this.food.cost();
     }
 }
