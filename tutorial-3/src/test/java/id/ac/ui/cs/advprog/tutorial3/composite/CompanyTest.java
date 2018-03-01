@@ -52,8 +52,7 @@ public class CompanyTest {
         company.addEmployee(brook);
 
         //NEED TO UPDATE IF YOU WANT TO WORK ADDITIONAL PROBLEM SET
-        //TODO Implement
-        chopper = new SecurityExpert("Chopper", 10000.00);
+        chopper = new SecurityExpert("Chopper", 80000.00);
         company.addEmployee(chopper);
     }
 
@@ -76,7 +75,7 @@ public class CompanyTest {
 
         //NEED TO UPDATE IF YOU WANT TO WORK ADDITIONAL PROBLEM SET
         //TODO Implement
-        assertEquals(1580000.00, company.getNetSalaries(), 0.0001);
+        assertEquals(1650000.00, company.getNetSalaries(), 0.0001);
     }
 
 }
