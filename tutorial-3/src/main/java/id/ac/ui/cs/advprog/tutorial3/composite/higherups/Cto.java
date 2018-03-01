@@ -1,10 +1,9 @@
-package id.ac.ui.cs.advprog.tutorial3.composite.techexpert;
+package id.ac.ui.cs.advprog.tutorial3.composite.higherups;
 
 import id.ac.ui.cs.advprog.tutorial3.composite.Employees;
-import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
 
-public class BackendProgrammer extends Employees {
-    public BackendProgrammer(String name, double salary) {
+public class Cto extends Employees {
+    public Cto(String name, double salary) {
         this.name = name;
         this.salary = salary;
     }
