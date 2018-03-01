@@ -2,20 +2,20 @@ package id.ac.ui.cs.advprog.tutorial3.decorator.filling;
 
 import id.ac.ui.cs.advprog.tutorial3.decorator.Food;
 
-public class BeefMeat extends Food {
+public class TomatoSauce extends Food {
     Food food;
 
-    public BeefMeat(Food food) {
+    public TomatoSauce(Food food) {
         this.food = food;
     }
 
     @Override
     public String getDescription() {
-        return "Crusty Sandwich, adding beef meat";
+        return "Thin Bun Burger, adding tomato sauce";
     }
 
     @Override
     public double cost() {
-        return 7.00;
+        return 1.70;
     }
 }
