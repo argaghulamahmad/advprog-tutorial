@@ -186,6 +186,7 @@ Pada class yang berada pada folder `filling` (decorator) dan `bread` (component)
 Oleh karena itu, berikut alasan mengapa `Decorator Design Pattern` berguna pada problem set ini:
 - Problem set ini membutuhkan design pattern yang dapat membantu men'attach' additional responsibilities pada suatu object secara dinamis.
 - `Decorator Design Pattern` menyediakan subclassing alternative untuk memperluas functionality secara flexible.
+
 ### Differences between `Decorator Design Pattern` and `Composite Design Pattern`?
 Berdasarkan buku HFDP, berikut definisi kedua design pattern tersebut.
 - `Decorator Design Pattern` definition:
