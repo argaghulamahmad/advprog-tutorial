@@ -77,9 +77,6 @@ public class CompanyTest {
     @Test
     public void salaryTotalTest() {
         List<Employees> allEmployees = company.getAllEmployees();
-
-        //NEED TO UPDATE IF YOU WANT TO WORK ADDITIONAL PROBLEM SET
-        //TODO Implement
         assertEquals(1650000.00, company.getNetSalaries(), 0.0001);
     }
 
