@@ -10,12 +10,9 @@ import id.ac.ui.cs.advprog.tutorial3.decorator.filling.FillingDecorator;
 
 public class Main {
     public static void main(String[] args) {
-        Food thickBunBurgerSpecial = new ThickBunBurger();
-        Food thinBunBurgerVegetarian = new ThinBunBurger();
-        Food doubleBeefChickenDoubleSauceSandwich = new CrustySandwich();
-        Food noCrustAllFillingSandwich = new NoCrustSandwich();
-
         //Thick Bun Burger with Beef Meat, Cheese, Cucumber, Lettuce, and Chili Sauce
+        Food thickBunBurgerSpecial;
+
         thickBunBurgerSpecial = BreadProducer.THICK_BUN.createBreadToBeFilled();
         System.out.println(thickBunBurgerSpecial.getDescription() + " - "
             + thickBunBurgerSpecial.cost());
@@ -46,6 +43,8 @@ public class Main {
             + thickBunBurgerSpecial.cost());
 
         //Thin Bun Burger with Tomato, Lettuce, Cucumber
+        Food thinBunBurgerVegetarian;
+
         thinBunBurgerVegetarian = BreadProducer.THIN_BUN.createBreadToBeFilled();
         System.out.println(thinBunBurgerVegetarian.getDescription() + " - "
             + thinBunBurgerVegetarian.cost());
@@ -66,6 +65,8 @@ public class Main {
             + thinBunBurgerVegetarian.cost());
 
         //Crusty Sandiwich with Beef Meat, Chicken Meat, Using Tomato and Chili Sauce
+        Food doubleBeefChickenDoubleSauceSandwich;
+
         doubleBeefChickenDoubleSauceSandwich =
                 BreadProducer.CRUSTY_SANDWICH.createBreadToBeFilled();
         System.out.println(doubleBeefChickenDoubleSauceSandwich.getDescription() + " - "
@@ -96,6 +97,8 @@ public class Main {
                 + doubleBeefChickenDoubleSauceSandwich.cost());
 
         //No Crust Sandiwich with All Filling
+        Food noCrustAllFillingSandwich;
+        
         noCrustAllFillingSandwich = BreadProducer.NO_CRUST_SANDWICH
                 .createBreadToBeFilled();
         System.out.println(noCrustAllFillingSandwich.getDescription() + " - "
