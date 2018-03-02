@@ -1,14 +1,19 @@
 package id.ac.ui.cs.advprog.tutorial3.composite;
 
+import static org.junit.Assert.assertEquals;
+
 import id.ac.ui.cs.advprog.tutorial3.composite.higherups.Ceo;
 import id.ac.ui.cs.advprog.tutorial3.composite.higherups.Cto;
-import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.*;
-import org.junit.Before;
-import org.junit.Test;
+import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.BackendProgrammer;
+import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.FrontendProgrammer;
+import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.NetworkExpert;
+import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.SecurityExpert;
+import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.UiUxDesigner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
 public class CompanyTest {
     private Company company;
@@ -60,7 +65,7 @@ public class CompanyTest {
     public void addingSomeEmployees() {
 
         Employees[] arrayEmployeeComparation = {luffy, zorro, franky, usopp, nami,
-                robin, sanji, brook, chopper};
+            robin, sanji, brook, chopper};
         List<Employees> allEmployees = company.getAllEmployees();
 
         for (int index = 0; index < allEmployees.size(); index++) {

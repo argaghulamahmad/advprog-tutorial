@@ -1,9 +1,9 @@
 package id.ac.ui.cs.advprog.tutorial3.composite.techexpert;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 public class FrontendProgrammerTest {
     private FrontendProgrammer frontendProgrammer;
