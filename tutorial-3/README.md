@@ -195,5 +195,6 @@ Berdasarkan buku HFDP, berikut definisi kedua design pattern tersebut.
 - `Composite Design Pattern` definition:
     - Allows you to compose object into tree structures to represent part-whole hierarchies.
     - Composite lets client treat individual objects and compositions in similar way as single object.
+    
 Jadi, `Composite Design Pattern` lebih fokus pada bagaimana individu objek dan komposisinya diperlakukan dengan cara yang sama dan menyusun mereka ke dalam strutur tree. 
 Sedangkan, `Decorator Design Pattern` lebih fokus pada bagaimana menambahkan responsibilities tambahan pada suatu objek secara dinamis.
