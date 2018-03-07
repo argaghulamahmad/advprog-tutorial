@@ -15,7 +15,7 @@ import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies.Onion;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies.RedPepper;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies.Veggies;
 
-public class DepokIngredientFactory implements PizzaIngredientFactory {
+public class DepokPizzaIngredientFactory implements PizzaIngredientFactory {
     @Override
     public Dough createDough() {
         return new MiddleThickCrustDough();

@@ -1,6 +1,6 @@
 package id.ac.ui.cs.advprog.tutorial4.exercise1;
 
-import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.DepokIngredientFactory;
+import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.DepokPizzaIngredientFactory;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.PizzaIngredientFactory;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.pizza.CheesePizza;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.pizza.ClamPizza;
@@ -11,7 +11,7 @@ public class DepokPizzaStore extends PizzaStore {
     @Override
     protected Pizza createPizza(String item) {
         Pizza pizza = null;
-        PizzaIngredientFactory ingredientFactory = new DepokIngredientFactory();
+        PizzaIngredientFactory ingredientFactory = new DepokPizzaIngredientFactory();
 
         if ("cheese".equals(item)) {
             pizza = new CheesePizza(ingredientFactory);
