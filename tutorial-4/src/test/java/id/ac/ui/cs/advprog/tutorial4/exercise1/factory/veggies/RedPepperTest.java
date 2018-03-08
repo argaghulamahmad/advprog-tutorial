@@ -1,9 +1,9 @@
 package id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 public class RedPepperTest {
     private Veggies veggies;

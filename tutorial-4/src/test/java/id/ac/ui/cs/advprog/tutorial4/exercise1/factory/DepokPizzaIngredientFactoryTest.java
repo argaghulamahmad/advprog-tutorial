@@ -1,5 +1,8 @@
 package id.ac.ui.cs.advprog.tutorial4.exercise1.factory;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.cheese.CamembertCheese;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.cheese.Cheese;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.clam.Clams;
@@ -16,9 +19,6 @@ import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies.RedPepper;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies.Veggies;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 public class DepokPizzaIngredientFactoryTest {
     private PizzaIngredientFactory factory;

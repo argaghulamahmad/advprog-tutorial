@@ -1,11 +1,9 @@
 package id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies;
 
-import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.sauce.ChiliSauce;
-import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.sauce.Sauce;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 public class BlackOlivesTest {
     private Veggies veggies;

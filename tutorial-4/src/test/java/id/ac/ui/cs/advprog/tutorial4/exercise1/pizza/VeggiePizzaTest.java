@@ -1,24 +1,20 @@
 package id.ac.ui.cs.advprog.tutorial4.exercise1.pizza;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.PizzaIngredientFactory;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.cheese.Cheese;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.cheese.MozzarellaCheese;
-import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.cheese.ParmesanCheese;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.clam.Clams;
-import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.clam.FreshClams;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.clam.HotClams;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.dough.Dough;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.dough.ThickCrustDough;
-import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.dough.ThinCrustDough;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.sauce.ChiliSauce;
-import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.sauce.PlumTomatoSauce;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.sauce.Sauce;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies.Carrot;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies.Veggies;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class VeggiePizzaTest {
     private Pizza pizza;

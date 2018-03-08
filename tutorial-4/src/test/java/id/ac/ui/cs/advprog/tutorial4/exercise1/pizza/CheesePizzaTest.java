@@ -1,5 +1,7 @@
 package id.ac.ui.cs.advprog.tutorial4.exercise1.pizza;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.PizzaIngredientFactory;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.cheese.Cheese;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.cheese.MozzarellaCheese;
@@ -11,8 +13,6 @@ import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.sauce.Sauce;
 import id.ac.ui.cs.advprog.tutorial4.exercise1.factory.veggies.Veggies;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CheesePizzaTest {
     private Pizza pizza;
