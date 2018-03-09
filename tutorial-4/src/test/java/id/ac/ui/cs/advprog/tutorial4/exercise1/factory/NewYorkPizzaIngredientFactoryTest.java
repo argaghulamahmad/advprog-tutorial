@@ -54,14 +54,21 @@ public class NewYorkPizzaIngredientFactoryTest {
         assertNotNull(veggies);
         for (int i = 0; i < veggies.length; i++) {
             Object obj = veggies[i];
-            if (i==0) {
-                assertTrue(obj instanceof Garlic);
-            } else if (i==1) {
-                assertTrue(obj instanceof Onion);
-            } else if (i==2) {
-                assertTrue(obj instanceof Mushroom);
-            } else if (i==3) {
-                assertTrue(obj instanceof RedPepper);
+            switch (i) {
+                default:
+                    
+                case 0:
+                    assertTrue(obj instanceof Garlic);
+                    break;
+                case 1:
+                    assertTrue(obj instanceof Onion);
+                    break;
+                case 2:
+                    assertTrue(obj instanceof Mushroom);
+                    break;
+                case 3:
+                    assertTrue(obj instanceof RedPepper);
+                    break;
             }
         }
     }
