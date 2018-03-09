@@ -122,35 +122,83 @@ gradle checkstyleMain
 
 ## Mandatory Tasks Checklist
 
-- [ ] Make at least 1 commit that contains your progress in completing
+- [x] Make at least 1 commit that contains your progress in completing
 `strategy` pattern
-- [ ] Make at least 1 commit that contains your progress in completing
+- [x] Make at least 1 commit that contains your progress in completing
 `observer` pattern
-- [ ] Push your commits to online Git repository on your GitLab project
-- [ ] Fix `MiniDuckSimulator` program in `strategy` package
-- [ ] Pass all tests in `strategy` package
-- [ ] Pass all tests in `observer` package
+- [x] Push your commits to online Git repository on your GitLab project
+- [x] Fix `MiniDuckSimulator` program in `strategy` package
+- [x] Pass all tests in `strategy` package
+- [x] Pass all tests in `observer` package
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, i.e. Checkstyle did not
+- [x] Make sure there are no code style issues, i.e. Checkstyle did not
 produce any warning when you execute `check` or `checkstyleMain` Gradle
 tasks
-- [ ] Implement all required methods correctly
+- [x] Implement all required methods correctly
     - **Hint: Make sure the implementation follows the example in Head First
     Design Pattern book!**
-- [ ] Describe another example of Strategy pattern you found in the wild, e.g.
+- [x] Describe another example of Strategy pattern you found in the wild, e.g.
 Java's standard library, 3rd party framework, etc., and write it in the
 provided space in this document (i.e. [My Notes](#my-notes) section)
     - **Reminder: Do not forget to `add`, `commit`, and `push` this document
     as well if you made some changes!**
-- [ ] Describe the difference between implementing Observer pattern by creating
+- [x] Describe the difference between implementing Observer pattern by creating
 your own Subject and Observer from scratch vs. reusing Java's `java.util.Observable`
 and `java.util.Observer`
     - Write your answer in [My Notes](#my-notes) section in this document
 
 ## My Notes
+### Another example of Strategy Pattern: Using lambda expressions
+In Java 8, we can use lambda expression for alternative strategy pattern.
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+Before using lambda expression:
+
+    public class StartegyPatternOldWay {
+    
+      public static void main(String[] args) {
+    
+        List<Strategy> strategies = 
+            Arrays.asList(
+              new LazyStratgey(), 
+              new ActiveStratgey()
+            );
+    
+        for(Strategy stg : strategies){
+          stg.performTask();
+        }
+      }
+    }
+
+After using lambda expression:
+
+    import java.util.Arrays;
+    import java.util.List;
+    
+    public class StrategyPatternOnSteroids {
+      public static void main(String[] args) {
+          
+        System.out.println("Strategy pattern on Steroids");
+        
+        List<Strategy> strategies = 
+          Arrays.asList(
+            () -> {System.out.println("Perform task a day before deadline!");},
+            () -> {System.out.println("Perform task now!");}
+          );
+        
+        strategies.forEach((elem) -> elem.performTask());
+      }
+      
+    }
+	
+
+### Difference between implementing Observer pattern by creating your own Subject and Observer from scratch vs. built in
+- Scratch
+  - We must create Observer and Subject interface from scratch.
+  - We must create registerObserver(), removeObserver(), and notifyObserver() method to the subject Interface.
+  - To notify all observer, the subject must implement notifyObserver().
+- Java Observable and Observer
+  - We only implement Java's Observable and Observer interface to the class who need that interface.
+  - The subject will notify all observer when data changed. To notify all observer we must call setChanged() and notifyObservers() method.
+  - The observer only implements override method like update() method. That method will be called when the subject call notifyObservers() method.
