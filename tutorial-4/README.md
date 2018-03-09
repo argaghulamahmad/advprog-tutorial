@@ -143,16 +143,16 @@ following specifications described above
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, i.e. Checkstyle did not
+- [x] Make sure there are no code style issues, i.e. Checkstyle did not
 produce any warning when you execute `check` or `checkstyleMain` Gradle
 tasks
-- [ ] Create several JUnit 4-based unit test classes (and the test cases,
+- [x] Create several JUnit 4-based unit test classes (and the test cases,
 obviously) **that cover at least 50% lines of code** in `exercise1` package
     - Hint: Please see unit tests in 1st and 3rd tutorial to see the overall
     structure of developing JUnit 4-based unit tests
     - You can check the code coverage using your IDE, e.g. in IntelliJ, you can
     right-click the test package and choose *Run All Tests with Coverage*
-- [ ] Compare lazy-instantiation and eager-instantiation approach in instantiating
+- [x] Compare lazy-instantiation and eager-instantiation approach in instantiating
 a Singleton object and describe the pros/cons of both approaches
     - Write your answer in [My Notes](#my-notes) section in this document
 
