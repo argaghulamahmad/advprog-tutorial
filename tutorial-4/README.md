@@ -127,19 +127,19 @@ gradle :tutorial-4:checkstyleMain
 
 ## Mandatory Tasks Checklist
 
-- [ ] Make at least 1 commit that contains your progress in completing
+- [x] Make at least 1 commit that contains your progress in completing
 Abstract Factory pattern
-- [ ] Make at least 1 commit that contains your progress in completing
+- [x] Make at least 1 commit that contains your progress in completing
 Singleton pattern
-- [ ] Push your commits to online Git repository on your GitLab project
-- [ ] Create a new ingredient class in `cheese`, `clam`, `dough`, `sauce`,
+- [x] Push your commits to online Git repository on your GitLab project
+- [x] Create a new ingredient class in `cheese`, `clam`, `dough`, `sauce`,
 and `veggies` package
-- [ ] Create a new `DepokPizzaIngredientFactory` class and implement it
+- [x] Create a new `DepokPizzaIngredientFactory` class and implement it
 correctly by following specifications described above
-- [ ] Create a new `DepokPizzaStore` class and implement it correctly by
+- [x] Create a new `DepokPizzaStore` class and implement it correctly by
 following specifications described above
-- [ ] Implement `Singleton` class correctly
-- [ ] Pass all tests related to Singleton class
+- [x] Implement `Singleton` class correctly
+- [x] Pass all tests related to Singleton class
 
 ## Additional Tasks Checklist
 
@@ -158,6 +158,10 @@ a Singleton object and describe the pros/cons of both approaches
 
 ## My Notes
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+### Differences betweeen `lazy-instantiaton` and `eager-instantiation`
+Terdapat dua tipe inisialisasi pada singleton design pattern yaitu `lazy` dan `eager` initialization. 
+Pada `eager` initialization, object diinisiasi saat eksekusi program, dimana tak jarang programmer tidak 
+menggunakan objek tersebut. Hal ini menyebabkan pembuangan sumber daya, memori dan processor, yang kita miliki. 
+Sedangkan pada `lazy` initialization, objek hanya diinisiasi pada saat runtime. Ini sangat berguna, 
+terlebih apabila sumber daya yang kita miliki terbatas. Sehingga meningkatkan performa dengan menghindari komputasi 
+yang tidak diperlukan dan mengurangi kebutuhan akan memori.
