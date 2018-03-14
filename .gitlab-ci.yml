@@ -29,7 +29,7 @@ test:t2:
   except:
     - branches@csui-advprog-2018/lab
 
-# Tutorial 2 CI jobs
+# Tutorial 3 CI jobs
 test:t3:
   stage: test
   script: gradle :tutorial-3:check
@@ -37,3 +37,26 @@ test:t3:
     - /.*tutorial[_-].*3$/
   except:
     - branches@csui-advprog-2018/lab
+
+# Tutorial 4 CI jobs
+test:t4:
+  stage: test
+  script: gradle :tutorial-4:check
+  only:
+    - /.*tutorial[_-].*4$/
+  except:
+    - branches@csui-advprog-2018/lab
+
+# Tutorial 5 CI jobs
+test:t5:
+  stage: test
+  script: gradle :tutorial-5:check
+  only:
+    - /.*tutorial[_-].*5$/
+  except:
+    - branches@csui-advprog-2018/lab
+  artifacts:
+      paths:
+      - /tutorial-5/build/*
+      expire_in: 1 week
+
