@@ -11,8 +11,13 @@ public class ResumeController {
     public String resume(@RequestParam(name = "visitor", required = true)
                                    String name, Model model) {
         model.addAttribute("visitor", name);
-        String pageTitle = name + ", I hope you interested to hire me";
-        model.addAttribute("pageTitle", pageTitle);
+        if (!name.equals("")) {
+            String pageTitle = name + ", I hope you interested to hire me";
+            model.addAttribute("pageTitle", pageTitle);
+        } else {
+            model.addAttribute("pageTitle", "This is my CV");
+        }
+
         return "resume";
     }
 }

@@ -22,6 +22,9 @@ public class ResumeTest {
     public void resumeWithVisitor() throws Exception {
         mockMvc.perform(get("/resume").param("visitor", "Arga"))
                 .andExpect(content().string(containsString("Arga, I hope you interested to hire me")));
+
+        mockMvc.perform(get("/resume").param("visitor", ""))
+                .andExpect(content().string(containsString("This is my CV")));
     }
 
 }
