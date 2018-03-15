@@ -20,8 +20,14 @@ public class RoutingTest {
 
     @Test
     public void index() throws Exception {
-        mockMvc.perform(get("/").param("name", "Greg"))
+        mockMvc.perform(get("/"))
                 .andExpect(content().string(containsString("Welcome to my resume web based, please enter your name.")));
+    }
+
+    @Test(expected = AssertionError.class)
+    public void indexNegative() throws Exception {
+        mockMvc.perform(get("/"))
+                .andExpect(content().string(containsString("Greeting to you")));
     }
 
 }
