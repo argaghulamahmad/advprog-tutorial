@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Homepage: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<p hidden>Get your greeting <a href="/greeting?name=Budi">here</a></p>
+<p>Welcome to my resume web based, please enter your name.</p>
+<div class="form-group">
+    <label for="visitor-name">Name:</label>
+    <input type="text" class="form-control" id="visitor-name">
+    <button id="submit-button">Submit</button>
+</div>
+<script>
+    $("#submit-button").click(function () {
+        var visitorName = document.getElementById('visitor-name').value;
+        var url = "/resume?visitor=";
+        window.open(url.concat(visitorName));
+    })
+</script>
+</body>
+</html>
