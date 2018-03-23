@@ -129,23 +129,23 @@ gradle :tutorial-6:checkstyleTest
 
 ## Mandatory Tasks Checklist
 
-- [ ] Refactor `statement()` method in `Customer` class
-- [ ] Make at least 3 commits that contains your progress in refactoring
+- [x] Refactor `statement()` method in `Customer` class
+- [x] Make at least 3 commits that contains your progress in refactoring
 `statement()` method in `Customer` class
-- [ ] Refactor test classes
-- [ ] Make at least 1 commit that contains your progress in refactoring
+- [x] Refactor test classes
+- [x] Make at least 1 commit that contains your progress in refactoring
 test classes
-- [ ] Ensure the tests still pass after each refactoring
-- [ ] Push your commits to online Git repository on your GitLab project
+- [x] Ensure the tests still pass after each refactoring
+- [x] Push your commits to online Git repository on your GitLab project
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, both in production code and
+- [x] Make sure there are no code style issues, both in production code and
 test code
-- [ ] Implement `htmlStatement()` method in `Customer` class
-- [ ] Create tests for testing `htmlStatement()` method using JUnit 4
-- [ ] Ensure 100% code coverage
-- [ ] Reflect on the refactoring activities that you have done and answer the
+- [x] Implement `htmlStatement()` method in `Customer` class
+- [x] Create tests for testing `htmlStatement()` method using JUnit 4
+- [x] Ensure 100% code coverage
+- [x] Reflect on the refactoring activities that you have done and answer the
 following questions:
     - What are the benefits of refactoring based on your observation?
     - What are the bad qualities observed in the code if we did not refactor
@@ -156,7 +156,26 @@ following questions:
     - Write your answer in [My Notes](#my-notes) section in this document
 
 ## My Notes
+### What are refactoring activities activities that you have done?
+- Extract Method
+- Move Method
+- Replace Temp with Query
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+### What are benefits of refactoring based on your observation?
+- Mempermudah kode untuk dibaca
+- Mengurangi kompleksitas code
+- Meningkatkan `maintainability` source code
+- Mempermudah menambahkan dalam menambahkan fitur baru
+- Mempermudah dalam mencari bug dan memperbaikinya
+- Meningkatkan `class cohesion`
+
+### What are the bad qualities observed in the code if we did not refactor the code?
+- Class `Customer` memiliki tingkat kohesi yang rendah
+- Long method pada method `statement`
+- Tingkat reusability rendah
+- Redudancy pada file-file test
+
+### Suppose that you did not conduct refactoring and did implement the htmlStatement by copy-pasting the algorithm from the original statement, what do you think the final result look like?
+Method `htmlStatement` akan memiliki panjang yang sama dengan panjang method `statement` sebelum direfactor. Dan, kita harus membuat method `htmlStatement` dari awal lagi. Dibandingkan dengan
+bila kita melakukan refactoring. Method `htmlStatement` dan `statement` tidak akan memiliki panjang seperti method `statement` sebelum di refactor. Hal tersebut terjadi karena beberapa fungsionalitas 
+telah di pecah ke dalam fungsi yang lebih kecil melalui teknik ekstrak method dan move method.
