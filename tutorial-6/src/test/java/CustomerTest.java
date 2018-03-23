@@ -53,4 +53,16 @@ public class CustomerTest {
         assertTrue(result.contains("Amount owed is 12.0"));
         assertTrue(result.contains("3 frequent renter points"));
     }
+
+    @Test
+    public void htmlStatement() {
+        customer.addRental(rent);
+        String result = customer.htmlStatement();
+        String[] lines = result.split("\n");
+
+        assertEquals(4, lines.length);
+        assertTrue(result.contains("<P>You owe <EM>3.5</EM><P>"));
+        assertTrue(result.contains("On this rental you earned <EM>"
+                + "1</EM> frequent renter points<P>"));
+    }
 }
