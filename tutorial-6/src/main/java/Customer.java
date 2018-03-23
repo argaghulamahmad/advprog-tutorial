@@ -38,10 +38,6 @@ class Customer {
         return result;
     }
 
-    private double amountFor(Rental rental) {
-        return rental.getThisAmount();
-    }
-
     private double getTotalAmount() {
         double result = 0;
         for (Rental rental: rentals) {
