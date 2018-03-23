@@ -28,9 +28,6 @@ class Customer {
 
         while (iterator.hasNext()) {
             Rental each = iterator.next();
-            double thisAmount = 0;
-            thisAmount = each.getThisAmount();
-
 
             // Add frequent renter points
             frequentRenterPoints++;
@@ -43,7 +40,8 @@ class Customer {
 
             // Show figures for this rental
             result += "\t" + each.getMovie().getTitle() + "\t"
-                    + String.valueOf(thisAmount) + "\n";
+                    + String.valueOf(each.getThisAmount()) + "\n";
+            totalAmount += each.getThisAmount();
         }
 
         // Add footer lines
