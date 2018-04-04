@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import static java.util.stream.Collectors.groupingBy;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,9 @@ public class ScoreGrouping {
 
     public static Map<Integer, List<String>> groupByScores(
             Map<String, Integer> scores) {
+
+        /*
+        //not declarative programming
 
         Map<Integer, List<String>> byScores = new HashMap<>();
 
@@ -27,6 +31,9 @@ public class ScoreGrouping {
         }
 
         return byScores;
+        */
+
+        return scores.keySet().stream().collect(groupingBy(scores::get));
     }
 
     public static void main(String[] args) {
