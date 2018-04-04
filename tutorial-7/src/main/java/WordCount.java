@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -10,6 +11,9 @@ import java.nio.file.Paths;
 public class WordCount {
 
     public static long countLines(String word, Path file) throws IOException {
+        /*
+        //not declarative programming
+
         long count = 0;
 
         BufferedReader reader = new BufferedReader(new FileReader(file.toString()));
@@ -23,7 +27,10 @@ public class WordCount {
 
         reader.close();
 
-        return count;
+        return count
+        */
+
+        return Files.lines(file).filter(line -> line.contains(word)).count();
     }
 
     public static void main(String[] args) {
