@@ -18,6 +18,7 @@ public class ApplicantTest {
     private Predicate<Applicant> creditCheck;
     private Predicate<Applicant> employmentCheck;
     private Predicate<Applicant> crimeCheck;
+    private Method printEvaluationMethod;
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -27,7 +28,7 @@ public class ApplicantTest {
     }
 
     @Before
-    public void setUp() {
+    public void setUp() throws NoSuchMethodException {
         applicant = new Applicant();
         creditCheck =
             theApplicant -> theApplicant.getCreditScore() > 600;
@@ -37,6 +38,9 @@ public class ApplicantTest {
 
         crimeCheck =
             theApplicant -> !theApplicant.hasCriminalRecord();
+
+        printEvaluationMethod = Applicant.class.getDeclaredMethod("printEvaluation", boolean.class);
+        printEvaluationMethod.setAccessible(true);
     }
 
     @Test
@@ -49,17 +53,13 @@ public class ApplicantTest {
 
     @Test
     public void testIsApplicantPrintEvaluationMethodResultAccepted() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
-        Method method = Applicant.class.getDeclaredMethod("printEvaluation", boolean.class);
-        method.setAccessible(true);
-        method.invoke(Applicant.class, true);
+        printEvaluationMethod.invoke(Applicant.class, true);
         assertEquals("Result of evaluating applicant: accepted\r\n", outContent.toString());
     }
 
     @Test
     public void testIsApplicantPrintEvaluationMethodResultRejected() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
-        Method method = Applicant.class.getDeclaredMethod("printEvaluation", boolean.class);
-        method.setAccessible(true);
-        method.invoke(Applicant.class, false);
+        printEvaluationMethod.invoke(Applicant.class, false);
         assertEquals("Result of evaluating applicant: rejected\r\n", outContent.toString());
     }
 
