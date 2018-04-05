@@ -1,5 +1,7 @@
 package applicant;
 
+import java.util.function.Predicate;
+
 /**
  * 4th exercise.
  */
@@ -21,8 +23,14 @@ public class Applicant {
         return true;
     }
 
+    /*
+    //imperative programming
     public static boolean evaluate(Applicant applicant, Evaluator evaluator) {
         return evaluator.evaluate(applicant);
+    }*/
+
+    public static boolean evaluate(Applicant applicant, Predicate<Applicant> evaluator) {
+        return applicant.isCredible() && evaluator.test(applicant);
     }
 
     private static void printEvaluation(boolean result) {
@@ -33,6 +41,8 @@ public class Applicant {
     }
 
     public static void main(String[] args) {
+        /*
+        //imperative programming
         Applicant applicant = new Applicant();
         printEvaluation(evaluate(applicant, new CreditEvaluator(new QualifiedEvaluator())));
         printEvaluation(evaluate(applicant,
@@ -44,5 +54,25 @@ public class Applicant {
                 new CriminalRecordsEvaluator(
                         new CreditEvaluator(
                                 new EmploymentEvaluator(new QualifiedEvaluator())))));
+        */
+
+        Applicant applicant = new Applicant();
+
+        Predicate<Applicant> creditCheck =
+            theApplicant -> theApplicant.getCreditScore() > 600;
+
+        Predicate<Applicant> employmentCheck =
+            theApplicant -> theApplicant.getEmploymentYears() > 0;
+
+        Predicate<Applicant> crimeCheck =
+            theApplicant -> !theApplicant.hasCriminalRecord();
+
+        printEvaluation(evaluate(applicant, creditCheck));
+
+        printEvaluation(evaluate(applicant, creditCheck.and(employmentCheck)));
+
+        printEvaluation(evaluate(applicant, crimeCheck.and(employmentCheck)));
+
+        printEvaluation(evaluate(applicant, crimeCheck.and(creditCheck).and(employmentCheck)));
     }
 }
