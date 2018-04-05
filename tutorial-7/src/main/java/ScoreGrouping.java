@@ -13,7 +13,7 @@ public class ScoreGrouping {
             Map<String, Integer> scores) {
 
         /*
-        //not declarative programming
+        //imperative programming
 
         Map<Integer, List<String>> byScores = new HashMap<>();
 

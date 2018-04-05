@@ -7,7 +7,7 @@ public class PrimeChecker {
 
     public static boolean isPrime(int number) {
         /*
-        //not declarative programming
+        //imperative programming
 
         boolean divisible = false;
 

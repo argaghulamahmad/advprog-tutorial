@@ -12,7 +12,7 @@ public class WordCount {
 
     public static long countLines(String word, Path file) throws IOException {
         /*
-        //not declarative programming
+        //imperative programming
 
         long count = 0;
 
