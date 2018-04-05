@@ -23,6 +23,7 @@ public class CreditEvaluatorTest {
 
     @Test
     public void testCreditEvaluatorEvaluateMethod() {
+        assertTrue(creditEvaluator.evaluate(applicant));
         assertFalse(creditEvaluator.evaluate(anotherApplicant));
     }
 }
