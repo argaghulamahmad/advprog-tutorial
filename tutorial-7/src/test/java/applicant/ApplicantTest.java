@@ -1,17 +1,17 @@
 package applicant;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.function.Predicate;
-
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class ApplicantTest {
     private Applicant applicant;
@@ -48,19 +48,24 @@ public class ApplicantTest {
         assertTrue(Applicant.evaluate(applicant, creditCheck));
         assertTrue(Applicant.evaluate(applicant, creditCheck.and(employmentCheck)));
         assertFalse(Applicant.evaluate(applicant, crimeCheck.and(employmentCheck)));
-        assertFalse(Applicant.evaluate(applicant, crimeCheck.and(creditCheck).and(employmentCheck)));
+        assertFalse(Applicant.evaluate(applicant, crimeCheck.and(creditCheck)
+                .and(employmentCheck)));
     }
 
     @Test
-    public void testIsApplicantPrintEvaluationMethodResultAccepted() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
+    public void testIsApplicantPrintEvaluationMethodResultAccepted()
+            throws InvocationTargetException, IllegalAccessException {
         printEvaluationMethod.invoke(Applicant.class, true);
-        assertEquals("Result of evaluating applicant: accepted\n", outContent.toString());
+        assertEquals("Result of evaluating applicant: accepted\n",
+                outContent.toString());
     }
 
     @Test
-    public void testIsApplicantPrintEvaluationMethodResultRejected() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
+    public void testIsApplicantPrintEvaluationMethodResultRejected()
+            throws InvocationTargetException, IllegalAccessException {
         printEvaluationMethod.invoke(Applicant.class, false);
-        assertEquals("Result of evaluating applicant: rejected\n", outContent.toString());
+        assertEquals("Result of evaluating applicant: rejected\n",
+                outContent.toString());
     }
 
     @After

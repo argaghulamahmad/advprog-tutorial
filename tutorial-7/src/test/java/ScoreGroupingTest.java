@@ -1,12 +1,12 @@
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import org.junit.Before;
+import org.junit.Test;
 
 public class ScoreGroupingTest {
     private static Map<String, Integer> scores = new HashMap<>();
@@ -21,20 +21,26 @@ public class ScoreGroupingTest {
         scores.put("Nick", 15);
         scores.put("Nancy", 11);
 
-        testScoresFixture.put(11, new ArrayList<String>() {{
-            add("Tom");
-            add("Nancy");
-        }});
+        testScoresFixture.put(11, new ArrayList<String>() {
+            {
+                add("Tom");
+                add("Nancy");
+            }
+        });
 
-        testScoresFixture.put(12, new ArrayList<String>() {{
-            add("Jack");
-        }});
+        testScoresFixture.put(12, new ArrayList<String>() {
+            {
+                add("Jack");
+            }
+        });
 
-        testScoresFixture.put(15, new ArrayList<String>() {{
-            add("Darla");
-            add("Nick");
-            add("Jill");
-        }});
+        testScoresFixture.put(15, new ArrayList<String>() {
+            {
+                add("Darla");
+                add("Nick");
+                add("Jill");
+            }
+        });
     }
 
     @Test

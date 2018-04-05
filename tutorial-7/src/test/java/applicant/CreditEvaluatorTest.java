@@ -1,11 +1,12 @@
 package applicant;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import org.junit.Before;
+import org.junit.Test;
 
 public class CreditEvaluatorTest {
     private Applicant applicant;
