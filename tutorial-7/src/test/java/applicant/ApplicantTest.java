@@ -54,13 +54,13 @@ public class ApplicantTest {
     @Test
     public void testIsApplicantPrintEvaluationMethodResultAccepted() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
         printEvaluationMethod.invoke(Applicant.class, true);
-        assertEquals("Result of evaluating applicant: accepted\r\n", outContent.toString());
+        assertEquals("Result of evaluating applicant: accepted\n", outContent.toString());
     }
 
     @Test
     public void testIsApplicantPrintEvaluationMethodResultRejected() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
         printEvaluationMethod.invoke(Applicant.class, false);
-        assertEquals("Result of evaluating applicant: rejected\r\n", outContent.toString());
+        assertEquals("Result of evaluating applicant: rejected\n", outContent.toString());
     }
 
     @After
