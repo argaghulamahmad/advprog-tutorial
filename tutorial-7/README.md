@@ -168,14 +168,31 @@ into functional style
 | Exercise Name  | Before  | After  |
 | ------------ | ------------ | ------------ |
 | 1st | 8 lines  | 1 line |
-| 2st |  10 lines | 1 line |
-| 3st | 11 lines | 1 line |
-| 4st | 14 lines | 9  lines |
+| 2nd |  10 lines | 1 line |
+| 3rd | 11 lines | 1 line |
+| 4th |  > 14 lines | 9  lines |
 
 Hasil refactor code dari imperative programming menjadi declarative programming menunjukan 
 bahwa code hasil refactor lebih singkat daripada sebelum direfactor. Code hasil refactor 
-lebih singkat karena tidak adanya penggunaan variable untuk iterasi. Hal tersebut dikarenakan 
-kita menggunakan declarative programming. Dengan menggunakan declarative programming, variable 
-iterasi dapat dieliminasi sehingga code hasil refactor lebih singkat.
+lebih singkat karena tidak adanya penggunaan variable untuk iterasi. Ini terlihat pada exercise ke satu, dua, dan tiga.
+Dengan menggunakan declarative programming style, variable iterasi dapat dieliminasi sehingga code hasil refactor menjadi
+lebih singkat.
+
+Selain itu, pada exercise ke empat. Kita tidak memerlukan lagi class-class yang mengimplement interface evaluator,
+karena code yang menerapkan decorator pattern dapat diubah menjadi code dengan imperative style menggunakan Java
+Predicate functional interface. Sehingga code hasil refactor tersebut lebih ringkas.
 
 ### Reflect on Functional Programming Style
+Bahasa pemrograman Java merupakan bahasa pemrograman imperative dan objek oriented. Tetapi bahasa pemrograman 
+java juga functional. Imperative programming merujuk kepada tipe paradigma dari suatu bahasa pemrograman. Imperative programming
+diartikan sebagai menulis statement programming bagaimana untuk melakukan hal itu. Imperative programming
+muncul karena adanya banyak fungsi dan library untuk masalah yang sudah umum kita temui. Sehingga saat kita 
+menemui sebuah masalah yang telah disolve dan ditulis fungsi atau library nya, kita bisa hanya menggunakan
+fungsi atau library tersebut. Sehingga code yang kita tulis dapat lebih ringkas.
+
+Berdasarkan pengalaman saya merefactor code yang terdapat pada exercise 1st, 2nd, 3rd, dan 4th. Menggunakan functional programming sangat memudahkan kita menulis sebuah code, karena kita hanya menulis statement program saja bukan implementasinya. Sehingga, code yang kita tulis bisa lebih singkat daripada menulis code dalam imperative programming style.
+
+Berikut keuntungan yang saya rasakan saat menulis code dalam imperative programming style
+- Menguji code yang ditulis dalam imperative programming style lebih mudah.
+- Mendebug code lebih mudah.
+- Menulis code dalam higher level, dan code lebih mudah dipahami.
