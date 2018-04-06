@@ -1,9 +1,5 @@
 package applicant;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
@@ -12,6 +8,8 @@ import java.util.function.Predicate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class ApplicantTest {
     private Applicant applicant;
@@ -58,6 +56,7 @@ public class ApplicantTest {
         printEvaluationMethod.invoke(Applicant.class, true);
         assertEquals("Result of evaluating applicant: accepted\n",
                 outContent.toString());
+        assertNotEquals("", outContent.toString());
     }
 
     @Test
@@ -66,6 +65,7 @@ public class ApplicantTest {
         printEvaluationMethod.invoke(Applicant.class, false);
         assertEquals("Result of evaluating applicant: rejected\n",
                 outContent.toString());
+        assertNotEquals("", outContent.toString());
     }
 
     @After

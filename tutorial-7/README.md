@@ -158,7 +158,7 @@ code has been refactored
 a short analysis on the result
     - Write your analysis report in [My Notes](#my-notes) section in this
     document
-- [ ] Write a paragraph that describe your experience in refactoring codebase
+- [x] Write a paragraph that describe your experience in refactoring codebase
 into functional style
     - You are allowed to write more than the required paragraph
     - Write your answer in [My Notes](#my-notes) section in this document
