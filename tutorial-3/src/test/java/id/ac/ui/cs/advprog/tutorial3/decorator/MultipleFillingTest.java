@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import id.ac.ui.cs.advprog.tutorial3.decorator.bread.BreadProducer;
 import id.ac.ui.cs.advprog.tutorial3.decorator.filling.FillingDecorator;
-import org.junit.Before;
+
 import org.junit.Test;
 
 public class MultipleFillingTest {
@@ -71,17 +71,17 @@ public class MultipleFillingTest {
 
         doubleBeefChickenDoubleSauceSandwich =
                 FillingDecorator.BEEF_MEAT.addFillingToBread(
-                doubleBeefChickenDoubleSauceSandwich);
+                        doubleBeefChickenDoubleSauceSandwich);
         assertEquals(7.00, doubleBeefChickenDoubleSauceSandwich.cost(), 0.001);
 
         doubleBeefChickenDoubleSauceSandwich =
                 FillingDecorator.CHICKEN_MEAT.addFillingToBread(
-                doubleBeefChickenDoubleSauceSandwich);
+                        doubleBeefChickenDoubleSauceSandwich);
         assertEquals(11.50, doubleBeefChickenDoubleSauceSandwich.cost(), 0.001);
 
         doubleBeefChickenDoubleSauceSandwich =
                 FillingDecorator.CHILI_SAUCE.addFillingToBread(
-                doubleBeefChickenDoubleSauceSandwich);
+                        doubleBeefChickenDoubleSauceSandwich);
         assertEquals(11.80, doubleBeefChickenDoubleSauceSandwich.cost(), 0.001);
 
         doubleBeefChickenDoubleSauceSandwich =
