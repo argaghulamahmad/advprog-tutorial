@@ -146,39 +146,55 @@ gradle :tutorial-3:checkstyleMain
 ## Mandatory Tasks Checklist
 
 - Decorator Pattern Checklist
-    - [ ] Make at least 1 commit that contains your progress in completing
+    - [x] Make at least 1 commit that contains your progress in completing
     Decorator pattern
-    - [ ] Push your commits to online Git repository on your GitLab project
-    - [ ] Complete the imeplementation over required Class
-    - [ ] Create a main class that demonstrate your implementation 
-    - [ ] Pass all test in `bread` and `filling` package
+    - [x] Push your commits to online Git repository on your GitLab project
+    - [x] Complete the implementation over required Class
+    - [x] Create a main class that demonstrate your implementation 
+    - [x] Pass all test in `bread` and `filling` package
 - Composite Pattern Checklist
-    - [ ] Make at least 1 commit that contains your progress in completing
+    - [x] Make at least 1 commit that contains your progress in completing
     Composite Method pattern
-    - [ ] Push your commits to online Git repository on your GitLab project
-    - [ ] Complete the implementation over required classes
-    - [ ] Create a main class that demonstrate your implementation
-    - [ ] Pass all test in `higherups` and `techexpert` package
+    - [x] Push your commits to online Git repository on your GitLab project
+    - [x] Complete the implementation over required classes
+    - [x] Create a main class that demonstrate your implementation
+    - [x] Pass all test in `higherups` and `techexpert` package
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, i.e. Checkstyle did not
+- [x] Make sure there are no code style issues, i.e. Checkstyle did not
 produce any warning when you execute `check` or `checkstyleMain` Gradle
 tasks
 - Decorator Pattern Checklist
-    - [ ] Pass all tests in `MultipleFillingTest` Class
-    - [ ] Explain why decorator pattern is helpful in this particular problem set?
+    - [x] Pass all tests in `MultipleFillingTest` Class
+    - [x] Explain why decorator pattern is helpful in this particular problem set?
         - Write your answer in [My Notes](#my-notes) section in this document
 - Composite Pattern Checklist
-    - [ ] Pass all tests in `AdditionalCompanyTest` Class
-    - [ ] If you look carefully, both decorator and composite pattern have a same
+    - [x] Pass all tests in `AdditionalCompanyTest` Class
+    - [x] If you look carefully, both decorator and composite pattern have a same
     particular topic (creating an object that comes from two or more supporting object).
     Explain what is the difference between composite and decorator purpose.
         - Write your answer in [My Notes](#my-notes) section in this document
     modified to use Stream API
 
 ## My Notes
+### Why decorator pattern is helpful in this particular problem set?
+Pada problem set ini, khususnya pada problem set decorator, kita mendapatkan sebuah masalah yang dapat di selesaikan menggunakan `Decorator Design Pattern`. 
+Lalu, kita dapat membagi mereka sesuai karakteristiknya, yaitu `bread` sebagai `Component` dan `filling` sebagai `Decorator`.
+Disini kita melihat `CrustySandwich`, `NoCrustSandwich`, `ThickBunBurger`, dan `ThinBunBurger` sebagai `ConcreteComponent`; `BeefMeat`, `Cheese`, `ChickenMeat`, `ChiliSauce`, `Cucumber`, `Lettuce`, `Tomato`, dan `TomatoSauce` sebagai `Decorator`.
+Pada class yang berada pada folder `filling` (decorator) dan `bread` (component) sama sama mengextends class `Food`.
+Oleh karena itu, berikut alasan mengapa `Decorator Design Pattern` berguna pada problem set ini:
+- Problem set ini membutuhkan design pattern yang dapat membantu men'attach' additional responsibilities pada suatu object secara dinamis.
+- `Decorator Design Pattern` menyediakan subclassing alternative untuk memperluas functionality secara flexible.
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+### Differences between `Decorator Design Pattern` and `Composite Design Pattern`?
+Berdasarkan buku HFDP, berikut definisi kedua design pattern tersebut.
+- `Decorator Design Pattern` definition:
+    - Attaches additional responsibilities to an object dynamically.
+    - Provide a flexible alternative to sub classing for extending functionality.
+- `Composite Design Pattern` definition:
+    - Allows you to compose object into tree structures to represent part-whole hierarchies.
+    - Composite lets client treat individual objects and compositions in similar way as single object.
+    
+Jadi, `Composite Design Pattern` lebih fokus pada bagaimana individu objek dan komposisinya diperlakukan dengan cara yang sama dan menyusun mereka ke dalam strutur tree. 
+Sedangkan, `Decorator Design Pattern` lebih fokus pada bagaimana menambahkan responsibilities tambahan pada suatu objek secara dinamis.
