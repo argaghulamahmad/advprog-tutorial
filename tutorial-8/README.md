@@ -146,18 +146,18 @@ gradle :tutorial-8:jacocoTestReport
 
 ## Mandatory Tasks Checklist
 
-- [ ] Make sure that you have at least 1 commit for each exercises that contain
+- [x] Make sure that you have at least 1 commit for each exercises that contain
 changes to the code after refactoring
-- [ ] Explain in your `My Notes` Section in this README, why at the first template code,
+- [x] Explain in your `My Notes` Section in this README, why at the first template code,
 the initial Tally Counter cannot have the exact number of ordered ticket (Relate it to
 the declaration of `c++` and `c--`)
-- [ ] Implement the new `TallyCounter` version (e.g. `AtomicTallyCounter`) using 
+- [x] Implement the new `TallyCounter` version (e.g. `AtomicTallyCounter`) using 
 `AtomicInteger` and explain why it can be the solution of this particular concurrency 
 problem
-- [ ] Implement the new `TallyCounter` version (e.g. `SynchronizedTallyCounter`) using Java
+- [x] Implement the new `TallyCounter` version (e.g. `SynchronizedTallyCounter`) using Java
 `Synchronized` and explain why it can be the solution of this particular concurrency 
 problem
-- [ ] Push your commits to online Git repository on your GitLab project
+- [x] Push your commits to online Git repository on your GitLab project
 
 ## Additional Tasks Checklist
 
@@ -175,7 +175,11 @@ extension Program, Faculty of Computer Science Universitas Indonesia)
 for the template code that he created in `Fraction` and `Main` class in Package `java.game`.
 
 ## My Notes
+### Why at the first template code, the initial Tally Counter cannot have the exact number of ordered ticket?
+- Pada template yang disediakan, increment dan decrement variable counter berjalan tidak selaras, karena multiple thread memodifikasi variable tersebut pada waktu yang sama sehingga nilai variable counter tidak terbaharui dengan benar dan menghasilkan nilai akhir variable counter yang tidak tepat (Race Condition Issue).
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+### Why AtomicInteger can be the solution of concurrency problem?
+- AtomicInteger merupakan class yang disediakan java pada package `java.util.concurrent.atomic`, dimana pada package ini disediakan banyak class yang berguna untuk operasi atomic. Class ini mengextends class Number dan mengimplements interface Serializable. Atomic integer merupakan pengganti Integer, dimana integer tidak bisa increment dan decrement angka concurrently tanpa synchronisasi. Sebuah operasi adalah atomic saat anda dapat menjalankan sebuah operasi dengan aman dalam suatu operasi yang berjalan parallel dalam multiple threads tanpa menggunakan Java Synchronized keyword. Jadi, AtomicInteger dan operasi atomic lainnya dapat menjadi salah satu solusi untuk masalah concurrency problem.
+
+### Why Java Synchronized can be the solution of concurrency problem?
+- Java Synchronized pada bahasa pemrograman Java bisa digunakan untuk mengatasi masalah concurrency, dengan menggunakan keyword synchronized dapat mencegah multiple threads mengakses shared resource secara concurrently. Synchronized bekerja dengan cara: jika suatu variable sedang diakses, maka thread lain harus menunggu thread yang sedang menggunakan variable tersebut selesai, sehingga nilai variable akan terupdate dengan baik.
