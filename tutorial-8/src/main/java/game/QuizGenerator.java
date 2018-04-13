@@ -19,7 +19,7 @@ public class QuizGenerator implements Runnable {
     private boolean isStarted = false;
 
     /**
-     * Start QuizGenerator thread
+     * Start QuizGenerator thread.
      */
     public void start() {
         if (thread == null) {
@@ -152,30 +152,30 @@ public class QuizGenerator implements Runnable {
     }
 
     /**
-     * Decrease totalPoint synchronized
+     * Decrease totalPoint synchronized.
      */
     public synchronized void decrementTotalPoint() {
         totalPoint--;
     }
 
     /**
-     * Add total point right below threshold point
-     * @param RIGHT_BELOW_THRESHOLD_POINT point will be added to total point
+     * Add total point right below threshold point.
+     * @param pointToAdd point will be added to total point
      */
-    public synchronized void addTotalPointBelowThreshold(double RIGHT_BELOW_THRESHOLD_POINT) {
-        totalPoint += RIGHT_BELOW_THRESHOLD_POINT;
+    public synchronized void addTotalPointBelowThreshold(double pointToAdd) {
+        totalPoint += pointToAdd;
     }
 
     /**
-     * Add total point right above threshold point
-     * @param RIGHT_ABOVE_THRESHOLD_POINT point will be added to total point
+     * Add total point right above threshold point.
+     * @param pointToAdd point will be added to total point
      */
-    public synchronized void addTotalPointAboveThreshold(double RIGHT_ABOVE_THRESHOLD_POINT) {
-        totalPoint += RIGHT_ABOVE_THRESHOLD_POINT;
+    public synchronized void addTotalPointAboveThreshold(double pointToAdd) {
+        totalPoint += pointToAdd;
     }
 
     /**
-     * Get instance var totalPoint
+     * Get instance var totalPoint.
      * @return int totalPoint
      */
     public synchronized int getTotalPoint() {
@@ -183,7 +183,7 @@ public class QuizGenerator implements Runnable {
     }
 
     /**
-     * Get instance var isOver
+     * Get instance var isOver.
      * @return boolean isOver
      */
     public synchronized boolean isOver() {
@@ -191,7 +191,7 @@ public class QuizGenerator implements Runnable {
     }
 
     /**
-     * Get instance var isStarted
+     * Get instance var isStarted.
      * @return boolean isStarted
      */
     public synchronized boolean isStarted() {
@@ -199,7 +199,7 @@ public class QuizGenerator implements Runnable {
     }
 
     /**
-     * Set instance var isOver value
+     * Set instance var isOver value.
      * @param flag boolean flag
      */
     public synchronized void setIsOver(boolean flag) {
@@ -207,7 +207,7 @@ public class QuizGenerator implements Runnable {
     }
 
     /**
-     * Set instance var isStarted value
+     * Set instance var isStarted value.
      * @param flag boolean flag
      */
     public synchronized void setIsStarted(boolean flag) {

@@ -12,7 +12,7 @@ public class QuizTimer implements Runnable {
     }
 
     /**
-     * Start QuizTimer thread
+     * Start QuizTimer thread.
      */
     public void start() {
         if (thread == null) {
@@ -28,8 +28,8 @@ public class QuizTimer implements Runnable {
                 try {
                     Thread.sleep(1000);
                     quizGenerator.decrementTotalPoint();
-                } catch (InterruptedException ignored) {
-
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         }

@@ -3,7 +3,7 @@ package tallycounter;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * The new version of Tally Counter implemented by using AtomicInteger
+ * The new version of Tally Counter implemented by using AtomicInteger.
  */
 public class AtomicTallyCounter {
     //Create variable counter using atomic integer with initial value zero
