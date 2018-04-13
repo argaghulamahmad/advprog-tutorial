@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * Thread that behave as timer for QuizGenerator.
+ */
 public class QuizTimer implements Runnable {
     private Thread thread;
     private QuizGenerator quizGenerator;

@@ -3,6 +3,9 @@ package game;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Thread that running main program, generate quiz questions, and determine final score.
+ */
 public class QuizGenerator implements Runnable {
     private static final int TOTAL_QUEST = 10;
     private static final int QUEST_TYPE_ADD = 0;
