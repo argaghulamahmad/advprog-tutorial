@@ -161,10 +161,10 @@ problem
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, both in production code and
+- [x] Make sure there are no code style issues, both in production code and
 test code
-- [ ] Implementing the feature as requested in the Description
-- [ ] Write a several sentence or paragraph about the additional task
+- [x] Implementing the feature as requested in the Description
+- [x] Write a several sentence or paragraph about the additional task
     - Can you implement the new quiz rule without any concurrency? Explain Why?
     - Can you implement the new feature with using at minimum 1 Thread? Explain Why?
 
@@ -182,4 +182,10 @@ for the template code that he created in `Fraction` and `Main` class in Package 
 - AtomicInteger merupakan class yang disediakan java pada package `java.util.concurrent.atomic`, dimana pada package ini disediakan banyak class yang berguna untuk operasi atomic. Class ini mengextends class Number dan mengimplements interface Serializable. Atomic integer merupakan pengganti Integer, dimana integer tidak bisa increment dan decrement angka concurrently tanpa synchronisasi. Sebuah operasi adalah atomic saat anda dapat menjalankan sebuah operasi dengan aman dalam suatu operasi yang berjalan parallel dalam multiple threads tanpa menggunakan Java Synchronized keyword. Jadi, AtomicInteger dan operasi atomic lainnya dapat menjadi salah satu solusi untuk masalah concurrency problem.
 
 ### Why Java Synchronized can be the solution of concurrency problem?
-- Java Synchronized pada bahasa pemrograman Java bisa digunakan untuk mengatasi masalah concurrency, dengan menggunakan keyword synchronized dapat mencegah multiple threads mengakses shared resource secara concurrently. Synchronized bekerja dengan cara: jika suatu variable sedang diakses, maka thread lain harus menunggu thread yang sedang menggunakan variable tersebut selesai, sehingga nilai variable akan terupdate dengan baik.
+- Java Synchronized pada bahasa pemrograman Java bisa digunakan untuk mengatasi masalah concurrency, dengan menggunakan keyword synchronized dapat mencegah issue multiple threads saat mengakses shared resource secara concurrently. Synchronized bekerja dengan cara: jika suatu variable sedang diakses, maka thread lain harus menunggu thread yang sedang menggunakan variable tersebut selesai, sehingga nilai variable akan terupdate dengan baik.
+
+### Can you implement the new quiz rule without any concurrency? Explain Why?
+- Tidak bisa, karena terdapat dua fitur yang berjalan bersamaan yaitu story feature dan requested feature. Tanpa concurrency kita tidak bisa membangun program yang berjalan dalam satu waktu yang sama. Oleh karena itu untuk mengimplementasikan rule quiz yang baru, kita hanya bisa menggunakan concurrency.
+
+### Can you implement the new feature with using at minimum 1 Thread? Explain Why?
+- Bisa, bila kita tidak menggunakan thread QuizTimer dengan mengasumsikan statement 'Every second of the game' pada soal hanya diproses ketika soal telah dijawab oleh user. Tetapi, dengan menggunakan hanya satu thread sulit untuk mengimplementasikan fitur baru tersebut. Oleh karena itu, saya lebih memilih mengimplementasikan fitur baru tersebut setidaknya menggunakan dua thread.
