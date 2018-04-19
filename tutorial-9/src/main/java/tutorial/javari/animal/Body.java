@@ -37,4 +37,13 @@ public class Body {
     public Gender getGender() {
         return gender;
     }
+
+    @Override
+    public String toString() {
+        return "Body{"
+                + "length=" + length
+                + ", weight=" + weight
+                + ", gender=" + gender
+                + '}';
+    }
 }

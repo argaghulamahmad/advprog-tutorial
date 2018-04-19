@@ -1,14 +1,17 @@
 package tutorial.javari.animal;
 
+import java.io.Serializable;
+
 /**
  * This class represents common attributes and behaviours found in all animals
  * in Javari Park.
  *
  * @author Programming Foundations 2 Teaching Team
- * @author TODO If you make changes in this class, please write your name here
- *     and describe the changes in the comment block
+ * @author Arga Ghulam Ahmad
+ *
+ * Implement compareTo, toString, and equals method.
  */
-public class Animal {
+public class Animal implements Comparable<Animal>, Serializable {
 
     private final Integer id;
     private final String type;
@@ -34,6 +37,14 @@ public class Animal {
         this.name = name;
         this.body = new Body(length, weight, gender);
         this.condition = condition;
+    }
+
+    public Animal(Integer id) {
+        this.id = id;
+        this.type = "";
+        this.name = "";
+        this.body = null;
+        this.condition = null;
     }
 
     public Integer getId() {
@@ -81,5 +92,26 @@ public class Animal {
      */
     public boolean isShowable() {
         return condition == Condition.HEALTHY;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{"
+                + "id=" + id
+                + ", type='" + type + '\''
+                + ", name='" + name + '\''
+                + ", body=" + body
+                + ", condition=" + condition
+                + '}';
+    }
+
+    @Override
+    public int compareTo(Animal o) {
+        return id.compareTo(o.getId());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return id.equals(((Animal) obj).getId());
     }
 }
