@@ -9,16 +9,29 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import org.json.JSONObject;
 import tutorial.javari.animal.Animal;
+import tutorial.javari.animal.AnimalComparator;
 import tutorial.javari.animal.Condition;
 import tutorial.javari.animal.Gender;
 
 public class AnimalsRecordManager {
     private static final String ANIMAL_RECORDS_PATH = "./tutorial-9/data/animals_records.csv";
+    private ArrayList<Animal> animals = new ArrayList<>();
 
-    public static List<String[]> getDataFromCsv() throws IOException {
+    public AnimalsRecordManager() throws IOException {
+        refreshRecords();
+    }
+
+    /**
+     * Convert data from csv to list.
+     * @return List list contains array strings of data
+     * @throws IOException exception
+     */
+    private List<String[]> getDataListFromCsv() throws IOException {
         try (
                 Reader reader = Files.newBufferedReader(Paths.get(ANIMAL_RECORDS_PATH));
                 CSVReader csvReader = new CSVReader(reader)
@@ -27,7 +40,12 @@ public class AnimalsRecordManager {
         }
     }
 
-    public static ArrayList<Animal> convertRecordsToAnimal(List<String[]> records) {
+    /**
+     * Convert records to arraylist of animals.
+     * @param records list of arrays strings of records
+     * @return ArrayList list contains animal object
+     */
+    private ArrayList<Animal> convertRecordsToAnimals(List<String[]> records) {
         ArrayList<Animal> animals = new ArrayList<>();
         records.forEach(record -> {
             int id = Integer.parseInt(record[0]);
@@ -43,19 +61,89 @@ public class AnimalsRecordManager {
         return animals;
     }
 
-    /*public static void printAll() throws IOException {
-        ArrayList<Animal> records = convertRecordsToAnimal(getDataFromCsv());
-        records.forEach(System.out::println);
-    }*/
+    /**
+     * Reset list data state to initial csv data.
+     * @throws IOException exception
+     */
+    private void refreshRecords() throws IOException {
+        animals = convertRecordsToAnimals(getDataListFromCsv());
+    }
 
-    public static String recordsToJson() throws IOException {
+    /**
+     * Convert object to json format.
+     * @param obj obj want to convert
+     * @return converted object as json format
+     * @throws IOException exception
+     */
+    private String objectToJson(Object obj) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
-        return objectMapper.writeValueAsString(convertRecordsToAnimal(getDataFromCsv()));
+        return objectMapper.writeValueAsString(obj);
     }
 
-    public static void main(String[] args) throws IOException {
-        System.out.println(recordsToJson());
+    /**
+     * Convert records to json data.
+     * @return String of json data or warning message
+     * @throws IOException exception
+     */
+    public String recordsToJson() throws IOException {
+        if (animals.isEmpty()) {
+            JSONObject message = new JSONObject();
+            message.put("messageType", "warning");
+            message.put("message", "Animals list is empty!");
+            return String.valueOf(message);
+        }
+        return objectToJson(animals);
+    }
+
+    /**
+     * Convert an animal to json data.
+     * @param id int id of animal
+     * @return json data of animal or warning message
+     * @throws IOException exception
+     */
+    public String animalToJson(int id) throws IOException {
+        AnimalComparator ac = new AnimalComparator();
+        animals.sort(ac);
+        int index = Collections.binarySearch(animals, new Animal(id));
+        if (index >= 0) {
+            Animal animal = animals.get(index);
+            return objectToJson(animal);
+        } else {
+            JSONObject message = new JSONObject();
+            message.put("messageType", "warning");
+            message.put("message", "Animal not exists!");
+            return String.valueOf(message);
+        }
+    }
+
+    /**
+     * Remove an animal from animals list.
+     * @param id int id of animal
+     * @return json data of animal or warning message
+     * @throws IOException exception
+     */
+    public String removeAnimal(int id) throws IOException {
+        AnimalComparator ac = new AnimalComparator();
+        animals.sort(ac);
+        int index = Collections.binarySearch(animals, new Animal(id));
+        System.out.println("Index : " + index);
+        String result = animalToJson(id);
+        animals.remove(new Animal(id));
+        return result;
+    }
+
+    /**
+     * Add animal to list.
+     * @param animal Object of an animal
+     * @return boolean success or false
+     */
+    public boolean addAnimal(Animal animal) {
+        if (!animals.contains(animal)) {
+            animals.add(animal);
+            return true;
+        }
+        return false;
     }
 }
