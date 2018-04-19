@@ -136,14 +136,14 @@ gradle :tutorial-9:checkstyleTest
 
 ## Mandatory Tasks Checklist
 
-- [ ] Prepare sample CSV file containing animal records
-- [ ] Create required class(es) for managing (CRUD) animal records
-- [ ] Implement all required Web service endpoints
-- [ ] Push your commits to online Git repository on your GitLab project
+- [x] Prepare sample CSV file containing animal records
+- [x] Create required class(es) for managing (CRUD) animal records
+- [x] Implement all required Web service endpoints
+- [x] Push your commits to online Git repository on your GitLab project
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, both in production code and
+- [] Make sure there are no code style issues, both in production code and
 test code
 - [ ] Create unit tests for testing `JavariController`
 - [ ] Do some research on how the controllers in Spring Framework can return
