@@ -127,12 +127,11 @@ class JavariRecords {
      * @return boolean
      */
     private boolean duplicateId(Animal subject) {
-        for (Animal animal : animals) {
-            if (animal.getId().equals(subject.getId())) {
-                return true;
-            }
-        }
-        return false;
+        AnimalComparator ac = new AnimalComparator();
+
+        animals.sort(ac);
+        int index = Collections.binarySearch(animals, subject);
+        return index >= 0;
     }
 
     /**

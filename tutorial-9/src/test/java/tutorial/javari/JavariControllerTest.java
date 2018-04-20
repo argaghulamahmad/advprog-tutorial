@@ -58,7 +58,7 @@ public class JavariControllerTest {
         this.mockMvc.perform(get("/javari/98"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.msgType").value("warning"));
+                .andExpect(jsonPath("$.messageType").value("warning"));
     }
 
     @Test
@@ -82,19 +82,19 @@ public class JavariControllerTest {
     public void deleteByIdTest() throws Exception {
         this.mockMvc.perform(delete("/javari/" + sampleId))
                 .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].msgType").value("success"))
+                .andExpect(jsonPath("$[0].messageType").value("success"))
                 .andExpect(jsonPath("$[1].id").value(sampleId));
 
         this.mockMvc.perform(get("/javari/" + sampleId))
                 .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.msgType").value("warning"));
+                .andExpect(jsonPath("$.messageType").value("warning"));
     }
 
     public void addAnimalTest() throws Exception {
         this.mockMvc.perform(post("/javari").content(sampleJson))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].msgType").value("success"))
+                .andExpect(jsonPath("$[0].messageType").value("success"))
                 .andExpect(jsonPath("$[1].id").value(sampleId));
 
         this.mockMvc.perform(get("/javari/" + sampleId))
