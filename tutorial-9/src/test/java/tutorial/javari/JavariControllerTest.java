@@ -46,6 +46,14 @@ public class JavariControllerTest {
     }
 
     @Test
+    public void getAllAnimalsTest() throws Exception {
+        this.mockMvc.perform(get("/javari"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[1].id").value("2"));
+    }
+
+    @Test
     public void getAnimalByIdTest() throws Exception {
         this.mockMvc.perform(get("/javari/3"))
                 .andDo(print())
@@ -61,17 +69,8 @@ public class JavariControllerTest {
                 .andExpect(jsonPath("$.messageType").value("warning"));
     }
 
-    @Test
-    public void getAllAnimalsTest() throws Exception {
-        this.mockMvc.perform(get("/javari"))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$[1].id").value("2"));
-    }
-
-
     /**
-        Restore database.
+        Restore database to initial state.
      */
     @Test
     public void deleteAndAddTest() throws Exception {

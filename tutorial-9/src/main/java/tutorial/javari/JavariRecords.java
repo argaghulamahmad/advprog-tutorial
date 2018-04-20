@@ -17,6 +17,9 @@ import tutorial.javari.animal.AnimalComparator;
 import tutorial.javari.animal.Condition;
 import tutorial.javari.animal.Gender;
 
+/**
+ * Represent records of animals information.
+ */
 class JavariRecords {
 
     private List<Animal> animals;
@@ -35,57 +38,6 @@ class JavariRecords {
      */
     List<Animal> getAnimals() {
         return animals;
-    }
-
-    /**
-     * Get an animal.
-     * @param id id of animal
-     * @return Animal animal object
-     */
-    Animal getAnimalById(int id) {
-        AnimalComparator ac = new AnimalComparator();
-        animals.sort(ac);
-        int index = Collections.binarySearch(animals, new Animal(id));
-
-        return index >= 0 ? animals.get(index) : null;
-    }
-
-    /**
-     * Add animal.
-     * @param json json data of animal want to add
-     * @return Animal animal object
-     * @throws IOException exception
-     */
-    Animal addAnimal(String json) throws IOException {
-        Animal newAnimal = jsonToAnimal(json);
-        if (!duplicateId(newAnimal)) {
-            animals.add(newAnimal);
-            saveData();
-            return newAnimal;
-        }
-        return null;
-    }
-
-    /**
-     * Delete animal from list.
-     * @param id int id of animal want to delete
-     * @return Animal object of animal
-     * @throws IOException exception
-     */
-    Animal deleteAnimalById(int id) throws IOException {
-        AnimalComparator ac = new AnimalComparator();
-        animals.sort(ac);
-        int index = Collections.binarySearch(animals, new Animal(id));
-
-        Animal animal = null;
-
-        if (index >= 0) {
-            animal = animals.remove(index);
-        } else {
-            saveData();
-        }
-
-        return animal;
     }
 
     /**
@@ -186,4 +138,54 @@ class JavariRecords {
         return String.join(",", attrs);
     }
 
+    /**
+     * Get an animal.
+     * @param id id of animal
+     * @return Animal animal object
+     */
+    Animal getAnimalById(int id) {
+        AnimalComparator ac = new AnimalComparator();
+        animals.sort(ac);
+        int index = Collections.binarySearch(animals, new Animal(id));
+
+        return index >= 0 ? animals.get(index) : null;
+    }
+
+    /**
+     * Add animal.
+     * @param json json data of animal want to add
+     * @return Animal animal object
+     * @throws IOException exception
+     */
+    Animal addAnimal(String json) throws IOException {
+        Animal newAnimal = jsonToAnimal(json);
+        if (!duplicateId(newAnimal)) {
+            animals.add(newAnimal);
+            saveData();
+            return newAnimal;
+        }
+        return null;
+    }
+
+    /**
+     * Delete animal from list.
+     * @param id int id of animal want to delete
+     * @return Animal object of animal
+     * @throws IOException exception
+     */
+    Animal deleteAnimalById(int id) throws IOException {
+        AnimalComparator ac = new AnimalComparator();
+        animals.sort(ac);
+        int index = Collections.binarySearch(animals, new Animal(id));
+
+        Animal animal = null;
+
+        if (index >= 0) {
+            animal = animals.remove(index);
+        } else {
+            saveData();
+        }
+
+        return animal;
+    }
 }

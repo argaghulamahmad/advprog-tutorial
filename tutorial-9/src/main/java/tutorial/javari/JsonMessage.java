@@ -12,32 +12,32 @@ public class JsonMessage {
         this.messageContent = messageContent;
     }
 
-    public String getMessageContent() {
-        return messageContent;
-    }
-
     public String getMessageType() {
         return messageType;
     }
 
-    public static JsonMessage getNotFoundMessage(int id) {
-        return new JsonMessage("warning",
-                "There is no animal with this id " + id + " !");
+    public String getMessageContent() {
+        return messageContent;
     }
 
-    public static JsonMessage getDatabaseEmptyMessage() {
+    static JsonMessage getRecordsEmptyMessage() {
         return new JsonMessage("warning",
                 "There is no animal in our records!");
     }
 
-    public static JsonMessage getSuccessDeleteMessage() {
-        return new JsonMessage("success",
-                "The animal has been deleted!");
+    static JsonMessage getNotFoundMessage(int id) {
+        return new JsonMessage("warning",
+                "There is no animal with this id " + id + " !");
     }
 
-    public static JsonMessage getSuccessAddMessage() {
+    static JsonMessage getSuccessAddMessage() {
         return new JsonMessage("success",
                 "The animal has been added!");
+    }
+
+    static JsonMessage getSuccessDeleteMessage() {
+        return new JsonMessage("success",
+                "The animal has been deleted!");
     }
 
 }

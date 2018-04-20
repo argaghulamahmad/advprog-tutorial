@@ -27,8 +27,10 @@ public class JavariController {
     public Object getAnimals() {
         List<Animal> animals;
         animals = records.getAnimals();
-        if (animals == null || animals.isEmpty()) {
-            return JsonMessage.getDatabaseEmptyMessage();
+        if (animals == null) {
+            return JsonMessage.getRecordsEmptyMessage();
+        } else if (animals.isEmpty()) {
+            return JsonMessage.getRecordsEmptyMessage();
         }
         return animals;
     }
