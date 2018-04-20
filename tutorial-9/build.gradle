@@ -25,8 +25,8 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.opencsv:opencsv:3.8")
-    implementation("com.fasterxml.jackson.core:2.0.1")
-    implementation("org.json:json:20171018")
+    implementation("com.fasterxml.jackson.core")
+    implementation("org.json:json")
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     testImplementation('com.jayway.jsonpath:json-path')
 }
