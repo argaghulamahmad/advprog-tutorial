@@ -143,10 +143,10 @@ gradle :tutorial-9:checkstyleTest
 
 ## Additional Tasks Checklist
 
-- [] Make sure there are no code style issues, both in production code and
+- [x] Make sure there are no code style issues, both in production code and
 test code
-- [ ] Create unit tests for testing `JavariController`
-- [ ] Do some research on how the controllers in Spring Framework can return
+- [x] Create unit tests for testing `JavariController`
+- [x] Do some research on how the controllers in Spring Framework can return
 a JSON object while the actual data was taken from a Java object, e.g.
 `Greeting` and `Animal` objects
     - Your report, at minimum, must contains information about: libraries that
@@ -155,7 +155,15 @@ a JSON object while the actual data was taken from a Java object, e.g.
     - Write your report in 2 - 3 paragraphs in My Notes section
 
 ## My Notes
+### How the controllers in Spring Framework can return a JSON object while the actual data was taken from a Java object
+Pada springboot framework, kita dapat membuat RESTful web service controller. Setiap object data akan ditulis langsung menjadi response berformat JSON. 
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+Dengan menggunakan annotation `@RestController`, controller akan mengembalikan response berupa object dibandingkan sebuah view. Object yang dikembalikan harus di konversi menjadi JSON. Karena springboot telah memiliki library `Jackson 2` pada classpathnya, springboot akan menconvert object isntance secara otomatis ke dalam format JSON.
+
+### How it works?
+Springboot akan menggunakan ObjectMapper untuk menulis semua
+instance variable dari object ke dalam string berformat JSON. Object akan melihat getter dari class terlebih dahulu, lalu menjadikan getter sebagai key
+tanpa prefix get, dengan kembalian getter sebagai value, terlepas apakah yang dikembalikan
+adalah instance variable atau bukan. Format inilah yang kemudian dijadikan JSON untuk response.
+
+Penggunaan data berformat JSON sangat cocok digunakan pada RESTful web service, karena salah satu kriteria dari sebuah RESTful web service ialah uniform interface yaitu menyediakan interface yang seragam. Salah satunya menggunakan JSON. JSON pun sudah umum digunakan pada technology lainnya, salah satunya adalah Javascript.
