@@ -17,14 +17,14 @@ import tutorial.javari.animal.AnimalComparator;
 import tutorial.javari.animal.Condition;
 import tutorial.javari.animal.Gender;
 
-public class JavariRecords {
+class JavariRecords {
 
     private List<Animal> animals;
     /*private static final String ANIMAL_RECORDS_PATH = "./tutorial-9/data/animals_records.csv";*/
     private static final String ANIMAL_RECORDS_PATH = "animals_records.csv";
     private final Path file = Paths.get("", ANIMAL_RECORDS_PATH);
 
-    public JavariRecords() throws IOException {
+    JavariRecords() throws IOException {
         animals = new ArrayList<>();
         loadData();
     }
@@ -33,7 +33,7 @@ public class JavariRecords {
      * Get list of animals.
      * @return List of animals
      */
-    public List<Animal> getAnimals() {
+    List<Animal> getAnimals() {
         return animals;
     }
 
@@ -42,7 +42,7 @@ public class JavariRecords {
      * @param id id of animal
      * @return Animal animal object
      */
-    public Animal getAnimalById(int id) {
+    Animal getAnimalById(int id) {
         AnimalComparator ac = new AnimalComparator();
         animals.sort(ac);
         int index = Collections.binarySearch(animals, new Animal(id));
@@ -56,7 +56,7 @@ public class JavariRecords {
      * @return Animal animal object
      * @throws IOException exception
      */
-    public Animal addAnimal(String json) throws IOException {
+    Animal addAnimal(String json) throws IOException {
         Animal newAnimal = jsonToAnimal(json);
         if (!duplicateId(newAnimal)) {
             animals.add(newAnimal);
@@ -72,7 +72,7 @@ public class JavariRecords {
      * @return Animal object of animal
      * @throws IOException exception
      */
-    public Animal deleteAnimalById(int id) throws IOException {
+    Animal deleteAnimalById(int id) throws IOException {
         AnimalComparator ac = new AnimalComparator();
         animals.sort(ac);
         int index = Collections.binarySearch(animals, new Animal(id));
@@ -142,11 +142,16 @@ public class JavariRecords {
      */
     private Animal jsonToAnimal(String input) {
         JSONObject json = new JSONObject(input);
-        return new Animal(json.getInt("id"), json.getString("type"),
-                json.getString("name"),
-                Gender.parseGender(json.getString("gender")),
-                json.getDouble("length"), json.getDouble("weight"),
-                Condition.parseCondition(json.getString("condition")));
+
+        int id = json.getInt("id");
+        String type = json.getString("type");
+        String name = json.getString("name");
+        Gender gender = Gender.parseGender(json.getString("gender"));
+        double length = json.getDouble("length");
+        double weight = json.getDouble("weight");
+        Condition condition = Condition.parseCondition(json.getString("condition"));
+
+        return new Animal(id, type, name, gender, length, weight, condition);
     }
 
     /**
@@ -156,10 +161,16 @@ public class JavariRecords {
      */
     private Animal csvToAnimal(String csvInput) {
         String[] attrs = csvInput.split(",");
-        return new Animal(Integer.parseInt(attrs[0]),
-                attrs[1], attrs[2], Gender.parseGender(attrs[3]),
-                Double.parseDouble(attrs[4]), Double.parseDouble(attrs[5]),
-                Condition.parseCondition(attrs[6]));
+
+        int id = Integer.parseInt(attrs[0]);
+        String type = attrs[1];
+        String name = attrs[2];
+        Gender gender = Gender.parseGender(attrs[3]);
+        double length = Double.parseDouble(attrs[4]);
+        double weight = Double.parseDouble(attrs[5]);
+        Condition condition = Condition.parseCondition(attrs[6]);
+
+        return new Animal(id, type, name, gender, length, weight, condition);
     }
 
     /**

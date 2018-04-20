@@ -4,20 +4,20 @@ package tutorial.javari;
  * Represent Json Message.
  */
 public class JsonMessage {
-    private final String msgType;
-    private final String message;
+    private final String messageType;
+    private final String messageContent;
 
-    private JsonMessage(String msgType, String message) {
-        this.msgType = msgType;
-        this.message = message;
+    private JsonMessage(String messageType, String messageContent) {
+        this.messageType = messageType;
+        this.messageContent = messageContent;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMessageContent() {
+        return messageContent;
     }
 
-    public String getMsgType() {
-        return msgType;
+    public String getMessageType() {
+        return messageType;
     }
 
     public static JsonMessage getNotFoundMessage(int id) {

@@ -26,15 +26,15 @@ public class JavariControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    private int sampleId = 9;
     private JavariRecords javariRecords = new JavariRecords();
-    private int sampleId = 5;
     private Animal sampleAnimal = javariRecords.getAnimalById(sampleId);
     private String sampleJson = animalToJson(sampleAnimal);
 
     public JavariControllerTest() throws IOException, JSONException {
     }
 
-    public String animalToJson(Animal animal) throws JSONException {
+    private String animalToJson(Animal animal) throws JSONException {
         return new JSONObject().put("id", animal.getId())
                 .put("type", animal.getType())
                 .put("name", animal.getName())

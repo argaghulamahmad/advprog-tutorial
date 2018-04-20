@@ -25,7 +25,8 @@ public class JavariController {
      */
     @GetMapping("/javari")
     public Object getAnimals() {
-        List<Animal> animals = records.getAnimals();
+        List<Animal> animals;
+        animals = records.getAnimals();
         if (animals == null || animals.isEmpty()) {
             return JsonMessage.getDatabaseEmptyMessage();
         }
@@ -39,7 +40,8 @@ public class JavariController {
      */
     @GetMapping("/javari/{id}")
     public Object getAnimalById(@PathVariable Integer id) {
-        Animal animal = records.getAnimalById(id);
+        Animal animal;
+        animal = records.getAnimalById(id);
         if (animal == null) {
             return JsonMessage.getNotFoundMessage(id);
         }
@@ -54,7 +56,8 @@ public class JavariController {
      */
     @DeleteMapping("/javari/{id}")
     public Object deleteAnimalById(@PathVariable Integer id) throws IOException {
-        Animal animal = records.deleteAnimalById(id);
+        Animal animal;
+        animal = records.deleteAnimalById(id);
         if (animal == null) {
             return JsonMessage.getNotFoundMessage(id);
         }
@@ -70,7 +73,8 @@ public class JavariController {
      */
     @PostMapping("/javari")
     public Object createAnimal(@RequestBody String json) throws IOException {
-        Animal animal = records.addAnimal(json);
+        Animal animal;
+        animal = records.addAnimal(json);
 
         return new Object[]{JsonMessage.getSuccessAddMessage(),animal};
     }
