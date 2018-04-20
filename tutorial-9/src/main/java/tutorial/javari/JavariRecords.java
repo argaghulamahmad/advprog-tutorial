@@ -1,20 +1,17 @@
 package tutorial.javari;
 
+import org.json.JSONObject;
+import tutorial.javari.animal.Animal;
+import tutorial.javari.animal.AnimalComparator;
+import tutorial.javari.animal.Condition;
+import tutorial.javari.animal.Gender;
+
 import java.io.*;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import com.opencsv.CSVReader;
-import org.json.JSONObject;
-
-import tutorial.javari.animal.Animal;
-import tutorial.javari.animal.AnimalComparator;
-import tutorial.javari.animal.Condition;
-import tutorial.javari.animal.Gender;
 
 public class JavariRecords {
 
@@ -92,17 +89,15 @@ public class JavariRecords {
      * @throws IOException exception
      */
     private void loadData() throws IOException {
-        try (
-                Reader reader = Files.newBufferedReader(Paths.get(ANIMAL_RECORDS_PATH));
-                CSVReader csvReader = new CSVReader(reader)
-        ) {
-            List<String[]> csvData = csvReader.readAll();
+        BufferedReader reader = new BufferedReader(new FileReader(file.toString()));
+        String line = reader.readLine();
 
-            csvData.forEach(record -> {
-                String joinedRecord = String.join(",", record);
-                animals.add(csvToAnimal(joinedRecord));
-            });
+        while (line != null) {
+            animals.add(csvToAnimal(line));
+            line = reader.readLine();
         }
+
+        reader.close();
     }
 
     /**
@@ -160,7 +155,7 @@ public class JavariRecords {
         return new Animal(Integer.parseInt(attrs[0]),
                 attrs[1], attrs[2], Gender.parseGender(attrs[3]),
                 Double.parseDouble(attrs[4]), Double.parseDouble(attrs[5]),
-                Condition.parseCondition(attrs[7]));
+                Condition.parseCondition(attrs[6]));
     }
 
     /**
