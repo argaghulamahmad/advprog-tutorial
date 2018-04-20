@@ -8,8 +8,6 @@ import java.io.Serializable;
  *
  * @author Programming Foundations 2 Teaching Team
  * @author Arga Ghulam Ahmad
- *
- * Implement compareTo, toString, and equals method.
  */
 public class Animal implements Comparable<Animal>, Serializable {
 

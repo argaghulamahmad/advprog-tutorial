@@ -1,17 +1,21 @@
 package tutorial.javari;
 
-import org.json.JSONObject;
-import tutorial.javari.animal.Animal;
-import tutorial.javari.animal.AnimalComparator;
-import tutorial.javari.animal.Condition;
-import tutorial.javari.animal.Gender;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.json.JSONObject;
+import tutorial.javari.animal.Animal;
+import tutorial.javari.animal.AnimalComparator;
+import tutorial.javari.animal.Condition;
+import tutorial.javari.animal.Gender;
 
 public class JavariRecords {
 
