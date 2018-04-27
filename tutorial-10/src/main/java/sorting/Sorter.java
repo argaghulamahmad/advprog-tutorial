@@ -1,6 +1,8 @@
 package sorting;
 
 
+import java.util.Arrays;
+
 public class Sorter {
 
     /**
@@ -10,17 +12,8 @@ public class Sorter {
      * @return a sorted array of integer.
      */
 
-    public static int[] slowSort(int[] inputArr) {
-        int temp;
-        for (int i = 1; i < inputArr.length; i++) {
-            for (int j = i; j > 0; j--) {
-                if (inputArr[j] < inputArr[j - 1]) {
-                    temp = inputArr[j];
-                    inputArr[j] = inputArr[j - 1];
-                    inputArr[j - 1] = temp;
-                }
-            }
-        }
+    public static int[] quickSort(int[] inputArr) {
+        Arrays.sort(inputArr);
         return inputArr;
     }
 
