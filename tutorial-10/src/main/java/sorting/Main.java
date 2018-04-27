@@ -16,19 +16,19 @@ public class Main {
 
         //Searching Input Before Sorting
         long totalMilisSearchBeforeSort = System.currentTimeMillis();
-        int searchingResultBeforeSort = Finder.slowSearch(sequenceInput, 40738);
+        int searchingResultBeforeSort = Finder.quickSearch(sequenceInput, 40738);
         totalMilisSearchBeforeSort = System.currentTimeMillis() - totalMilisSearchBeforeSort;
         System.out.println("Searching Complete in " + totalMilisSearchBeforeSort + " milisecond");
 
         //Sorting Input
         long totalMilisSorting = System.currentTimeMillis();
-        int[] sortedInput = Sorter.slowSort(sequenceInput);
+        int[] sortedInput = Sorter.quickSort(sequenceInput);
         totalMilisSorting = System.currentTimeMillis() - totalMilisSorting;
-        System.out.println("Sorting Complete in " + totalMilisSorting + " milisecond");
+        System.out.println("(Quick) Sorting Complete in " + totalMilisSorting + " milisecond");
 
         //Searching Input After Sorting
         long totalMilisSearchAfterSort = System.currentTimeMillis();
-        int searchingResultAfterSort = Finder.slowSearch(sequenceInput, 40738);
+        int searchingResultAfterSort = Finder.quickSearch(sequenceInput, 40738);
         totalMilisSearchAfterSort = System.currentTimeMillis() - totalMilisSearchAfterSort;
         System.out.println("Searching Complete in " + totalMilisSearchAfterSort + " milisecond");
     }
