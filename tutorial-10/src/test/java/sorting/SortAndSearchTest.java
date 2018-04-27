@@ -23,7 +23,7 @@ public class SortAndSearchTest {
 
     @Test
     public void testSearchNotFound() {
-        int[] arr = {2, 1, 3, 4, 7, 5, 6, 9, 8, 11, 10, 12 ,15 ,14 ,13};
+        int[] arr = {2, 1, 3, 4, 7, 5, 6, 9, 8, 11, 10, 12, 15, 14, 13};
         assertEquals(Finder.quickSearch(arr, 0), -1);
     }
 
