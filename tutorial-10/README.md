@@ -114,38 +114,52 @@ provided by OS (e.g. time in Unix-based OS) or by measuring it directly in code
 
 ## Mandatory Tasks Checklist
 
-- [ ] Check and Optimizing Sorting Algorithm
-    - [ ] Check whether the currently used algorithm is optimal or not.
-    - [ ] Implement a better algorithm (if you think that the currently used algorithm
+- [x] Check and Optimizing Sorting Algorithm
+    - [x] Check whether the currently used algorithm is optimal or not.
+    - [x] Implement a better algorithm (if you think that the currently used algorithm
     is not optimal)
-    - [ ] Create a test case to check whether your algorithm is successfully 
+    - [x] Create a test case to check whether your algorithm is successfully 
     sort the sequence
-- [ ] Check and Optimizing Searching Algorithm
-    - [ ] Check whether the currently used algorithm is optimal or not.
-    - [ ] Implement a better algorithm (if you think that the currently used algorithm
+- [x] Check and Optimizing Searching Algorithm
+    - [x] Check whether the currently used algorithm is optimal or not.
+    - [x] Implement a better algorithm (if you think that the currently used algorithm
     is not optimal). You may combine the process by sorting the sequence first
     before searching.
-    - [ ] Create a test case to check whether your algorithm is successfully 
+    - [x] Create a test case to check whether your algorithm is successfully 
     search a speficic value in the sequence
-- [ ] Explain in [My Notes](#my-notes) section, whether the current benchmark
+- [x] Explain in [My Notes](#my-notes) section, whether the current benchmark
 test design is already good to measure the elapsed time of algorithm and explain why!
     - Hint: Recall how processes and threads are executed (from your OS course)
     and do research about how JVM runs and compiles Java code
-- [ ] Push your commits to online Git repository on your GitLab project
+- [x] Push your commits to online Git repository on your GitLab project
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, both in production code and
+- [x] Make sure there are no code style issues, both in production code and
 test code
-- [ ] Refactor `convertInputFileToMatrix` to handle non-square matrix input
-- [ ] Provide Unit Test to check whether your implementation is correct
-- [ ] Define your benchmark test for basic and Strassen multiplication algorithm to measure
+- [x] Refactor `convertInputFileToMatrix` to handle non-square matrix input
+- [x] Provide Unit Test to check whether your implementation is correct
+- [x] Define your benchmark test for basic and Strassen multiplication algorithm to measure
 elapsed time.
-    - [ ] Explain why you decided to design your benchmark test as it is in My notes section.
-    - [ ] Report the result of your benchmark test in My notes section 
+    - [x] Explain why you decided to design your benchmark test as it is in My notes section.
+    - [x] Report the result of your benchmark test in My notes section 
 
 ## My Notes
+### Benchmark Sorting
+Implementasi benchmark pada tutorial ini hanya mengukur total waktu eksekusi, pada kenyataannya 
+total waktu eksekusi bukan hanya total waktu eksekusi program tersebut melainkan juga mencakup waktu
+I/O dan juga waktu wait terhadap thread process lain yang telah di atur oleh sistem operasi. karena thread dapat berjumlah banyak
+sedangkan jumlah processor terbatas.
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+### Benchmark Matrix Multiplication
+Dalam mengimplementasikan benchmark matrix multiplication, yang saya ukur hanya total running time, bukan CPU time.
+Saya mengimplementasikan seperti itu, karena sudah cukup untuk membandingkan kedua algoritma tersebut dari segi performa.
+
+#### Benchmark Report
+Basic square matrix multiplication, matrix 1: plainTextDirectory/input/matrixProblemA/matrixProblemSet1.txt, matrix 2: plainTextDirectory/input/matrixProblemA/matrixProblemSet2.txt, total run time: 8 ms
+Strassen square matrix multiplication, matrix 1: plainTextDirectory/input/matrixProblemA/matrixProblemSet1.txt, matrix 2: plainTextDirectory/input/matrixProblemA/matrixProblemSet2.txt, total run time: 285 ms
+
+#### Conclusion
+Algoritma slowSort dapat dioptimasi menggunakan method sort array bawaan java ataupun algoritma sort yang lebih cepat / lebih baik.
+Algoritma searching sudah cukup baik.
+Algoritma perkalian matrix biasa lebih cepat dibandingkan dengan algoritma strassen.
